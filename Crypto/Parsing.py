@@ -16,13 +16,16 @@ def read(cryptoname):
         reader = csv.DictReader(csvfile)
         for row in reader:
             if row['date'].endswith("/1"):
-                dict[row['date']] = row['price(USD)']
+                dict[row['date']] = [row['price(USD)'], ]
     return dict
 
-def finaldict():
-    finaldict = {}
-    for item in crypto_to_data:
-        finaldict[item] = read(item)
-    return finaldict
+
+finaldict = {}
+for item in crypto_to_data:
+    finaldict[item] = read(item)
+
+def datechange(olddate):
+    if olddate.endswith()
+    newdate =
 
 
