@@ -1,28 +1,7 @@
 import csv
+from Crypto.Parse import finaldict
 
-crypto_to_data = {"Bitcoin": "btc",
-                  "Dash": "dash",
-                  "Ethereum": "eth",
-                  "Litecoin": "ltc",
-                  "Tether": "usdt",
-                  "Stellar": "xlm",
-                  "Ripple": "xrp"}
-
-def read(cryptoname):
-    dict = {}
-    abbre = crypto_to_data[cryptoname]
-    str = abbre + ".csv"
-    with open(str, newline='') as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            if row['date'].endswith("/1"):
-                dict[row['date']] = row['price(USD)']
-    return dict
-
-finaldict = {}
-for item in crypto_to_data:
-    finaldict[item] = read(item)
-
+dataset = p.finaldict()
 class Market:
     # The Market is made up of a date and a dictionary of Currency prices mapped to Currency names
     def __init__(self, date, collection):
@@ -43,7 +22,7 @@ class Market:
 
     def update(self, newdate):
         self.date = newdate
-        for cryp in finaldict:
+        for cryp in finaldict():
             if newdate in finaldict[cryp]:
                 self.collection[cryp] = finaldict[cryp][newdate]
             else:
