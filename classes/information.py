@@ -1,6 +1,27 @@
-def get_asset_cost:
-    pass
+def get_property(choiceProperty):
+    return property_choices[choiceProperty + 1]
 
+
+def get_investment(choiceInvestment):
+    return property_choices[choiceInvestment + 1]
+
+
+# Choices
+property_choices = (("vehicle_economy", 20000),
+                    ("vehicle_middle", 50000),
+                    ("vehicle_luxury", 100000),
+                    ("estate_apartment", 150000),
+                    ("estate_house", 300000),
+                    ("estate_penthouse", 600000))
+investment_choices = (("stock_low", 1000),
+                      ("stock_avg", 1000),
+                      ("stock_high", 1000),
+                      ("fixed_3", 1000),
+                      ("fixed_6", 1000),
+                      ("fixed_12", 1000))
+
+
+"""
 # Vehicle
 Bicycle = Community.Vehicle("Bicycle", 300, vehicleMonthlyPayment(300, Community.Economy.get_interestRate()))
 EconomyClassVehicle = Community.Vehicle("EconomyClassVehicle", 20000, vehicleMonthlyPayment(20000, Community.Economy.get_interestRate()))
@@ -51,12 +72,7 @@ fixed_1000000_2 = Community.FixedSaving(1000000, 2, 0.005)
 fixed_1000000_5 = Community.FixedSaving(1000000, 5, 0.007)
 fixed_1000000_10 = Community.FixedSaving(1000000, 10, 0.01)
 
-
-
-
-
 # Choices
-
 property_choices = {"Vehicle":{Bicycle, EconomyClassVehicle, MiddleClassVehicle, LuxuryClassVehicle, SuperClassVehicle},
                    "RealEstate":{Hut, Garage, OneBedroomApt, TwoBedroomApt, House, Penthouse, Mansion}}
 
@@ -85,3 +101,4 @@ fixedsaving_choices = {fixed_50000_2,
                       fixed_1000000_2,
                       fixed_1000000_5,
                       fixed_1000000_10}
+"""

@@ -10,7 +10,7 @@ from classes.Information import *
 class Property:
     """Class for large assets (real estate, vehicles)"""
 
-    def __init__(self, name, propertyValue, income):
+    def __init__(self, name, propertyValue):
         self.name = name
         self.propertyValue = propertyValue
 
@@ -26,7 +26,13 @@ class Investment:
     def __init__(self, name, investmentValue, fixedCount=0):
         self.name = name
         self.investmentValue = investmentValue
-        self.fixedCount = fixedCount
+        if "3" in self.name:
+            self.fixedCount = 3
+        if "6" in self.name:
+            self.fixedCount = 6
+        if "12" in self.name:
+            self.fixedCount = 12
+        self.fixedInterest = 0.002
 
     def income(self):
         if "stock" in self.name:
@@ -38,8 +44,9 @@ class Investment:
                 return self.investmentValue * random.uniform(-0.008, 0.016)
         if "fixed" in self.name:
             self.fixedCount -= 1
+            self.fixedInterest += 0.0001
             if self.fixedCount == 0:
-                return self.investmentValue * 1.015
+                return self.investmentValue * (1 + self.fixedInterest)
             else:
                 return -1
 
@@ -59,11 +66,11 @@ class PlayerAssets:
         self.investment = []
         self.cryptocurrency = []
 
-    def add_property(self, propertyAsset):
-        self.property.append(propertyAsset)
+    def add_property(self, propertyInfo):
+        self.property.append(Property(propertyInfo[0], propertyInfo[1]))
 
-    def add_investment(self, investmentAsset):
-        self.property.append(investmentAsset)
+    def add_investment(self, investmentInfo):
+        self.property.append(Investment(investmentInfo[0], investmentInfo[1]))
 
     def add_cryptocurrency(self, cryptoAsset):
         self.property.append(cryptoAsset)
