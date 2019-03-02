@@ -32,49 +32,49 @@
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>440</x>
-     <y>170</y>
+     <x>450</x>
+     <y>160</y>
      <width>211</width>
      <height>301</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="Loan3xButton">
       <property name="text">
-       <string>Deposit</string>
+       <string>Loan 3x Salary</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="Loan2xButton">
       <property name="text">
-       <string>Withdraw</string>
+       <string>Loan 2x Salary</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="Loan1xButon">
       <property name="text">
-       <string>Check Balance</string>
+       <string>Loan 1x Salary</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="Loan05xButton">
       <property name="text">
-       <string>Loan</string>
+       <string>Loan 0.5x Salary</string>
       </property>
      </widget>
     </item>
    </layout>
   </widget>
-  <widget class="QTextEdit" name="textEdit">
+  <widget class="QTextBrowser" name="textBrowser">
    <property name="geometry">
     <rect>
      <x>430</x>
-     <y>20</y>
-     <width>251</width>
+     <y>30</y>
+     <width>241</width>
      <height>111</height>
     </rect>
    </property>
