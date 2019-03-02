@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5aa05849-8331-4ba2-a22c-262998a0f43e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameFunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameFunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameInstance.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameInstance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windows/OptionWindows.py" beforeDir="false" afterPath="$PROJECT_DIR$/windows/OptionWindows.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/windows/main_window.ui" beforeDir="false" afterPath="$PROJECT_DIR$/windows/main_window.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/main_window.ui.autosave" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,71 +20,13 @@
     <SUITE FILE_PATH="coverage/hackricecryptogame$test_signal.coverage" NAME="test_signal Coverage Results" MODIFIED="1551521545894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hackricecryptogame$InvestmentWindow.coverage" NAME="InvestmentWindow Coverage Results" MODIFIED="1551560948951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/windows" />
   </component>
-  <component name="DockManager">
-    <window id="2">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/windows/OptionWindows.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="371">
-                    <caret line="211" lean-forward="true" selection-start-line="211" selection-end-line="211" />
-                    <folding>
-                      <element signature="e#0#10#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/GameFunctions.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="621">
-                    <caret line="95" column="46" selection-start-line="95" selection-start-column="46" selection-end-line="95" selection-end-column="46" />
-                    <folding>
-                      <element signature="e#0#10#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/Player.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GameInstance.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_signal.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="150">
+              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -103,6 +48,7 @@
       <find>ask</find>
       <find>ask_loan</find>
       <find>interest_list</find>
+      <find>pay_livin</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -124,8 +70,8 @@
         <option value="$PROJECT_DIR$/windows/InvestmentWindow.py" />
         <option value="$PROJECT_DIR$/classes/Player.py" />
         <option value="$PROJECT_DIR$/GameInstance.txt" />
-        <option value="$PROJECT_DIR$/GameFunctions.py" />
         <option value="$PROJECT_DIR$/windows/OptionWindows.py" />
+        <option value="$PROJECT_DIR$/GameFunctions.py" />
         <option value="$PROJECT_DIR$/GameInstance.py" />
       </list>
     </option>
@@ -260,12 +206,12 @@
       <option name="presentableId" value="Default" />
       <updated>1551507876093</updated>
       <workItem from="1551507877363" duration="3003000" />
-      <workItem from="1551520410868" duration="26196000" />
+      <workItem from="1551520410868" duration="27489000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29199000" />
+    <option name="totallyTimeSpent" value="30492000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="814" y="23" width="866" height="945" extended-state="0" />
@@ -405,28 +351,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/Player.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="-630">
           <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GameInstance.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GameFunctions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="95" column="46" selection-start-line="95" selection-start-column="46" selection-end-line="95" selection-end-column="46" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -435,8 +361,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/windows/OptionWindows.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="211" lean-forward="true" selection-start-line="211" selection-end-line="211" />
+        <state relative-caret-position="2206">
+          <caret line="249" column="31" lean-forward="true" selection-start-line="249" selection-start-column="31" selection-end-line="249" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GameFunctions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GameInstance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
