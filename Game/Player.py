@@ -65,7 +65,7 @@ class PlayerAssets:
         self.property.append(cryptocurrency)
 
 
-class PlayerFinances:
+class PlayerClass:
     """Class for game player finances"""
 
     def __init__(self, salary, livingExpenses, savings, card, credit, debt):
@@ -104,5 +104,3 @@ class PlayerFinances:
 
     def change_debt(self, changeAmount):
         self.debt += changeAmount
-
-
