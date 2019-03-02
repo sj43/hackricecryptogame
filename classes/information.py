@@ -21,6 +21,20 @@ investment_choices = (("stock_low", 1000),
                       ("fixed_12", 1000))
 
 
+# Quests
+
+quests = {1: ("The economy is booming! It’s a chance for you to move to a new house! Purchase a new house. (within 3 months)", 3),
+          2: ("You got into an accident! You must sell your crashed vehicle (instantly) and purchase a new one (within this month)", 0),
+          3: ("You got robbed!!! You lose 5 percent of your money (instantly). Exchange cryptocurrencies to make up for your loss. (within 4 months)", 4),
+          4: ("Are you confident in exchanging cryptocurrencies and making money? Increase your net value by 100000 (within 6 turns)", 6),
+          5: ("Show me that you can become a millionaire. Increase your net value by $1000000 by exchanging cryptocurrencies (within 15 turns)", 15),
+          6: ("I know you want more $$. Loan 3x salary from bank. (by end of this turn)", 0),
+          7: ("Increase your credit score by 100. (within 10 turns)", 10),
+          8: ("Stock market crashed!! You will lose all stocks. RIP. Recover your loss. (within 15 turns)", 15)}
+
+
+
+
 """
 # Vehicle
 Bicycle = Community.Vehicle("Bicycle", 300, vehicleMonthlyPayment(300, Community.Economy.get_interestRate()))
