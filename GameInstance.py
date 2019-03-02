@@ -6,7 +6,7 @@ from GameFunctions import *
 from windows.investment_window import *
 from windows.property_window import *
 from classes.quest import *
-
+from Crypto.market import *
 
 
 class GameInstance(GameFunctions):
@@ -49,5 +49,6 @@ class GameInstance(GameFunctions):
     
         # update community info
         # update crypto info
+
         # update screen info
         pass
