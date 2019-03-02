@@ -186,6 +186,9 @@ class MainWindow(QObject):
     open_property = Signal()
     open_investment = Signal()
 
+    living_expenses = Signal(int)
+    card_repay = Signal(int)
+
     def __init__(self, ui_file, parent=None):
         super(MainWindow, self).__init__(parent)
         ui_file = QFile(ui_file)
@@ -200,10 +203,22 @@ class MainWindow(QObject):
         property_button = self.window.findChild(QPushButton, 'PropertyButton')
         investment_button = self.window.findChild(QPushButton, 'InvestmentButton')
 
+        living_card_button = self.window.findChild(QPushButton, 'living_card')
+        living_savings_button = self.window.findChild(QPushButton, 'living_savings')
+        card_repay_button = self.window.findChild(QPushButton, 'card_repay')
+        card_notrepay_button = self.window.findChild(QPushButton, 'card_notrepay')
+
+        fee_payment_list = self.window.findChild(QListWidget, 'fee_payment')
+
         bank_button.clicked.connect(self.open_bank_window)
         crypto_button.clicked.connect(self.open_crypto_window)
         property_button.clicked.connect(self.open_property_window)
         investment_button.clicked.connect(self.open_investment_window)
+
+        living_card_button.clicked.connect(self.living_expenses_card)
+        living_savings_button.clicked.connect(self.living_expenses_savings)
+        card_repay_button.clicked.connect(self.credit_card_repay)
+        card_notrepay_button.clicked.connect(self.credit_card_notrepay)
 
         self.window.show()
 
@@ -224,3 +239,19 @@ class MainWindow(QObject):
 
     def open_investment_window(self):
         self.open_investment.emit()
+
+    def living_expenses_card(self):
+        self.living_expenses.emit(1)
+
+    def living_expenses_savings(self):
+        self.living_expenses.emit(2)
+
+    def credit_card_repay(self):
+        self.card_repay.emit(1)
+
+    def credit_card_notrepay(self):
+        self.card_repay.emit(2)
+
+    def display_fee_payment(self, payment):
+        self.interest_list.addItem(payment)
+
