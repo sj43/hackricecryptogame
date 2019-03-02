@@ -9,6 +9,11 @@ crypto_to_data = {"Bitcoin": "btc",
                   "Ripple": "xrp"}
 
 def read(cryptoname):
+    """
+    Given a name of one of the 7 cryptocurrency, return a dictionary corresponding to it,
+    with dates as keys and price for that date as the values.
+    """
+
     dict = {}
     abbre = crypto_to_data[cryptoname]
     str = abbre + ".csv"
@@ -19,13 +24,11 @@ def read(cryptoname):
                 dict[row['date']] = [row['price(USD)'], ]
     return dict
 
-
 finaldict = {}
 for item in crypto_to_data:
+    # Create our dataset for the price of each cryptocurrency at the first day of any given month
     finaldict[item] = read(item)
 
-def datechange(olddate):
-    if olddate.endswith()
-    newdate =
+
 
 

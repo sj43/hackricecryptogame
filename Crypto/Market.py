@@ -26,8 +26,32 @@ class Market:
             else:
                 self.collection[cryp] = -1
 
-
 Current = Market("2015/10/1", {})
-Current.update("2015/11/1")
+Current.update("2015/10/1")
 print(Current.collection)
 print(Current.date)
+
+def datechange(olddate):
+    """
+    To update the current date by switching to the next month
+    :param olddate: the previous date in the format YYYY/MM or YYYY/M
+    :return: the new date in the same format
+    """
+    if (olddate.endswith("12")):
+        newyear = int(olddate[0:4]) + 1
+        newdate = str(newyear) + "/1"
+    elif (olddate[-2] == "/"):
+        month = int(olddate[-1]) + 1
+        newdate = olddate[:-1] + str(month)
+    elif (olddate[-3] == "/"):
+        month = int(olddate[-2:]) + 1
+        newdate = olddate[:-2] + str(month)
+    else:
+        newdate = "Formatting Error"
+    return newdate
+
+print(datechange("2014/1"))
+print(datechange("2014/12"))
+print(datechange("2016/4"))
+print(datechange("2018/10"))
+
