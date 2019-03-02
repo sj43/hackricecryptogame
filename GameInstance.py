@@ -28,7 +28,10 @@ class GameInstance(GameFunctions):
         self.get_income()
 
         # show quest here
-        quest = Quest()
+        new_quest = Quest()
+
+        # check for existing quests success
+        self.is_quest_done()
 
 
         self.pay_living_expenses()
