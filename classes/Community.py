@@ -1,3 +1,7 @@
+import sys
+from PySide2.QtWidgets import QApplication, QPushButton
+from PySide2.QtCore import QObject, Signal, Slot
+
 class Economy:
     """Class for economy and market conditions"""
 
@@ -32,26 +36,26 @@ class Bank:
             amount_to_change = 20
         return amount_to_change
 
-    def howMuchCanILoan(self, player):
-        if player.credit >= 720:
-            return 3*player.compute_net_worth()
-        elif player.credit >= 680:
-            return 2*player.compute_net_worth()
-        elif player.credit >= 640:
-            return player.compute_net_worth()
+    def howMuchCanILoan(self, salary, credit):
+        if credit >= 720:
+            return 3*salary
+        elif credit >= 680:
+            return 2*salary
+        elif credit >= 640:
+            return 1*salary
         else:
             return -1
 
-    def getLoanInterest(self, player):
+    def getLoanInterest(self, credit):
         """
         FICO credit score ranges from 300 to 850.
         less than 660 is poor, over 660 is good, and 800 is excellent.
         """
-        if player.credit >= 720:
+        if credit >= 720:
             return 0.11
-        elif player.credit >= 680:
+        elif credit >= 680:
             return 0.14
-        elif player.credit >= 640:
+        elif credit >= 640:
             return 0.19
         else:
             return -1
