@@ -71,3 +71,8 @@ class GameInstance(GameFunctions):
     
         # update screen info
         pass
+
+
+app = QApplication(sys.argv)
+form = PropertyWindow('property_window.ui')
+sys.exit(app.exec_())

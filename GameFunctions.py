@@ -27,7 +27,7 @@ class GameFunctions:
 
     @Slot
     def player_ask_loan(self):
-        maxLoanAmount = self.bank.howMuchCanILoan(self.player.salary, self.player.cedit)
+        maxLoanAmount = self.bank.howMuchCanILoan(self.player.salary, self.player.credit)
         loanInterest = self.bank.getLoanInterest(self.player.credit)
 
         self.max_loan_amount.emit(maxLoanAmount, loanInterest)

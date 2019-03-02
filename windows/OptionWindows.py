@@ -172,8 +172,3 @@ class BankWindow(QObject):
         self.get_loan.emit(0.1)
         self.window.hide()
 
-
-
-app = QApplication(sys.argv)
-form = PropertyWindow('property_window.ui')
-sys.exit(app.exec_())
