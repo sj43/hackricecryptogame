@@ -1,10 +1,11 @@
 from hackricecryptogame.Crypto.Parsing import *
 
 class Market:
-    # The Market is made up of a date and a dictionary of Currency prices mapped to Currency names
-    def __init__(self, date, collection):
+    # The Market is made up of a date represented by a string and a dictionary of Currency prices mapped to Currency names
+    def __init__(self, date, collection, monthly_gain):
         self.date = date
         self.collection = collection
+        self.monthly = monthly_gain
 
     def getdate(self):
         return self.date
@@ -18,6 +19,12 @@ class Market:
         else:
             print(cryptoname + " not found!!")
 
+    def getgrowth(self, cryptoname):
+        if cryptoname in self.monthly:
+            print("The growth of " + cryptoname + " last month is " + self.monthly[cryptoname])
+        else:
+            print(cryptoname + " not found!!")
+
     def update(self, newdate):
         self.date = newdate
         for cryp in finaldict:
@@ -26,10 +33,16 @@ class Market:
             else:
                 self.collection[cryp] = -1
 
-Current = Market("2015/10/1", {})
-Current.update("2015/10/1")
-print(Current.collection)
-print(Current.date)
+    def updatemarket(self, newdate):
+        temp = dict()
+        for element in self.collection:
+            temp[element] = self.collection[element]
+        self.update(newdate)
+        for name in self.collection:
+            if (float(temp[name]) > 0.0):
+                self.monthly[name] = str(round((float(self.collection[name]) / float(temp[name]) - 1) * 100, 2)) + "%"
+            else:
+                self.monthly[name] = None
 
 def datechange(olddate):
     """
@@ -50,8 +63,16 @@ def datechange(olddate):
         newdate = "Formatting Error"
     return newdate
 
-print(datechange("2014/1"))
-print(datechange("2014/12"))
-print(datechange("2016/4"))
-print(datechange("2018/10"))
+turn = 20
+Current = Market("2015/10", {}, {})
+Current.update("2015/10")
+
+# A simulation of how the market would react when the game is run
+while (turn > 0):
+    newdate = datechange(Current.date)
+    Current.updatemarket(newdate)
+    print(Current.date)
+    print(Current.collection)
+    print(Current.monthly)
+    turn-=1
 

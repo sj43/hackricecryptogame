@@ -21,7 +21,7 @@ def read(cryptoname):
         reader = csv.DictReader(csvfile)
         for row in reader:
             if row['date'].endswith("/1"):
-                dict[row['date']] = [row['price(USD)'], ]
+                dict[row['date'][:-2]] = row['price(USD)']
     return dict
 
 finaldict = {}
@@ -29,6 +29,7 @@ for item in crypto_to_data:
     # Create our dataset for the price of each cryptocurrency at the first day of any given month
     finaldict[item] = read(item)
 
+print(finaldict)
 
 
 
