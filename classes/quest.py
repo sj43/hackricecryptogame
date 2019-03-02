@@ -1,5 +1,5 @@
 class Quest:
-    def __init__(self, date, success):
+    def __init__(self, date):
         self.start_month = date
         self.end_month = -1
         self.success = False
