@@ -2,7 +2,7 @@ import sys
 
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtWidgets import QApplication, QPushButton, QListWidget
-from PySide2.QtCore import QFile, QObject, QString, Signal, Slot
+from PySide2.QtCore import QFile, QObject, Signal, Slot
 
 
 class PropertyWindow(QObject):
@@ -163,8 +163,8 @@ class BankWindow(QObject):
 
     def set_loan_amount(self, maxLoanAmount, loanInterest):
         self.interest_list.clear()
-        self.interest_list.addItem(QString("Max Loan Amount: ") + QString(maxLoanAmount))
-        self.interest_list.addItem(QString("Loan Interest: ") + QString(loanInterest))
+        self.interest_list.addItem(str("Max Loan Amount: ") + str(maxLoanAmount))
+        self.interest_list.addItem(str("Loan Interest: ") + str(loanInterest))
 
     def loan_100(self):
         self.get_loan.emit(1.0)

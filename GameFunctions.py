@@ -1,6 +1,6 @@
 import sys
 from PySide2.QtWidgets import QApplication, QPushButton
-from PySide2.QtCore import QObject, QString, Signal, Slot
+from PySide2.QtCore import QObject, Signal, Slot
 
 from classes.Player import *
 from classes.Community import *
@@ -16,7 +16,7 @@ class GameFunctions:
     see_loan = Signal()
     see_property = Signal()
     see_investment = Signal()
-    show_payment = Signal(QString)
+    show_payment = Signal(str)
 
     def __init__(self, startDate):
         self.date = startDate
@@ -74,7 +74,7 @@ class GameFunctions:
             self.player.savings += propertyAsset.income()
 
     def pay_living_expenses(self):
-        self.show_payment.emit(QString("Living Expenses: ") + QString(self.player.livingExpenses))
+        self.show_payment.emit(str("Living Expenses: ") + str(self.player.livingExpenses))
 
     @Slot(int)
     def choice_living_expenses(self, choicePayment):
@@ -104,14 +104,14 @@ class GameFunctions:
 
     def pay_loans(self):
         paymentLeft = self.player.payments
-        self.show_payment.emit(QString("Living Expenses: ") + QString(paymentLeft))
+        self.show_payment.emit(str("Living Expenses: ") + str(paymentLeft))
 
         self.player.savings -= paymentLeft
         if self.player.savings < 0:
             self.player.savings = self.sell_assets(-self.player.savings)
 
     def pay_card(self):
-        self.show_payment.emit(QString("Living Expenses: ") + QString(5000 - self.player.card))
+        self.show_payment.emit(str("Living Expenses: ") + str(5000 - self.player.card))
 
     @Slot(int)
     def choice_card(self, choiceCard):

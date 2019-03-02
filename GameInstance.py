@@ -4,7 +4,7 @@ from PySide2.QtCore import QObject, Signal, Slot
 
 from GameFunctions import *
 from windows.OptionWindows import *
-##from classes.quest import *
+from classes.quest import *
 ##from Crypto.market import *
 
 
@@ -23,10 +23,10 @@ class GameInstance(GameFunctions):
         self.connect_signals_and_slots()
 
     def connect_signals_and_slots(self):
-        MainWindow.open_bank.connect(BankWindow.open_window)
+        MainWindow.open_bank.connect(self.player_ask_loan)
         ##MainWindow.open_crypto.connect(CryptoWindow.open_window)
-        MainWindow.open_property.connect(PropertyWindow.open_window)
-        MainWindow.open_investment.connect(InvestmentWindow.open_window)
+        MainWindow.open_property.connect(self.player_ask_property)
+        MainWindow.open_investment.connect(self.player_ask_investment)
 
         PropertyWindow.buy_property.connect(self.player_buy_property)
         InvestmentWindow.make_investment.connect(self.player_make_investment)
