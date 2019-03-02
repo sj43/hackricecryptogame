@@ -56,21 +56,21 @@ class GameInstance:
 
     @Slot(int)
     def player_buy_property(self, choiceProperty):
-        propertyCost = get_asset_cost("property", choiceProperty)
+        propertyInfo = get_property(choiceProperty)
 
-        self.player.assets.add_property(!!!property.car.name!!!)
-        self.player.savings -= propertyCost
+        self.player.assets.add_property(propertyInfo)
+        self.player.savings -= propertyInfo[1]
 
     @Slot
     def player_ask_investment(self):
         self.see_investment.emit()
 
     @Slot(int)
-    def player_make_investment(self, choiceProperty):
-        investmentValue = !!!investment.stock.value!!!
+    def player_make_investment(self, choiceInvestment):
+        investmentInfo = get_investment(choiceInvestment)
 
-        self.player.assets.add_investment(!!!property.stock.name!!!)
-        self.player.savings -= investmentValue
+        self.player.assets.add_investment(investmentInfo)
+        self.player.savings -= investmentInfo[1]
 
     def get_income(self):
         self.player.savings += self.player.salary
