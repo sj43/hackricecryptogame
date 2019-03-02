@@ -32,6 +32,11 @@ class GameInstance(GameFunctions):
         self.update_assets()
         self.update_netWorth()
 
+        self.date[1] += 1
+        if self.date[1] == 13:
+            self.date[0] += 1
+            self.date[1] = 0
+
         # update community info
         # update crypto info
         # update screen info
