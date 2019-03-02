@@ -17,9 +17,7 @@ class Economy:
 
 
 class Bank:
-    """
-    Class for bank system.
-    """
+    """Class for bank system"""
     def __init__(self, name):
         self.name = name
 
