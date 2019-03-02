@@ -2,10 +2,10 @@ class Bank:
     """
     Class for bank system.
     """
-    def __init__(self, player):
-        pass
+    def __init__(self, name):
+        self.name = name
 
-    def updateCreditScore(self):
+    def updateCreditScore(self, player):
         if player.creditcard < 1000:
             amount_to_change = -300
         elif player.creditcard < 3000:
@@ -18,7 +18,7 @@ class Bank:
             amount_to_change = 20
         return amount_to_change
 
-    def howMuchCanILoan(self):
+    def howMuchCanILoan(self, player):
         if player.credit >= 720:
             return 3*player.compute_net_worth()
         elif player.credit >= 680:
@@ -28,7 +28,7 @@ class Bank:
         else:
             return -1
 
-    def getLoanInterest(self):
+    def getLoanInterest(self, player):
         """
         FICO credit score ranges from 300 to 850.
         less than 660 is poor, over 660 is good, and 800 is excellent.
@@ -42,7 +42,7 @@ class Bank:
         else:
             return -1
 
-    def calculateNewDebt(self):
+    def calculateNewDebt(self, player):
         """
         Needs to be called every month!
         """

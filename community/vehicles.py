@@ -1,13 +1,13 @@
-class Realestate:
-    def __init__(self, name, value, rent):
+class Vehicle:
+    def __init__(self, name, value, fee):
         self.name = name
         self.value = value
-        self.rent = rent
+        self.fee = fee
         self.owner = ""
         self.paid = 0.0
 
     def info(self):
-        print(self.name, self.value, self.rent, self.owner)
+        print(self.name, self.value, self.fee, self.owner)
 
     def buyIt(self, amount_paid):
         self.owner = "YOU"
