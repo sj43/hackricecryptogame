@@ -16,5 +16,3 @@ class Economy:
         self.stockIndex = changeAmount
 
 
-
-
