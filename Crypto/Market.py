@@ -1,7 +1,7 @@
-from resources.Parsing import *
+from resources.parsing import finaldict
 
 class Market:
-    # The Market is made up of a set of Currencies
+    # The Market is made up of a date and a dictionary of Currency prices mapped to Currency names
     def __init__(self, date, collection):
         self.date = date
         self.collection = collection
@@ -21,8 +21,8 @@ class Market:
     def update(self, newdate):
         self.date = newdate
         for cryp in finaldict:
-            if date in finaldict[cryp]:
-                self.collection[cryp] = finaldict[cryp][date]
+            if newdate in finaldict[cryp]:
+                self.collection[cryp] = finaldict[cryp][newdate]
             else:
                 self.collection[cryp] = -1
 
