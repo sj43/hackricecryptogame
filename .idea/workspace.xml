@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5aa05849-8331-4ba2-a22c-262998a0f43e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/GameInstance.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameInstance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Community.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Community.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Information.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Information.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Player.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Player.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,14 +20,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GameInstance.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="143" column="36" lean-forward="true" selection-start-line="143" selection-start-column="36" selection-end-line="143" selection-end-column="36" />
+            <state relative-caret-position="249">
+              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classes/Information.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="18" selection-start-column="18" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -59,12 +71,13 @@
         <option value="$PROJECT_DIR$/Game/__init__.py" />
         <option value="$PROJECT_DIR$/Game/a.py" />
         <option value="$PROJECT_DIR$/Game/GameInstance.py" />
-        <option value="$PROJECT_DIR$/classes/Community.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/test_signal.py" />
-        <option value="$PROJECT_DIR$/classes/Player.py" />
         <option value="$PROJECT_DIR$/test_window.py" />
+        <option value="$PROJECT_DIR$/classes/Community.py" />
+        <option value="$PROJECT_DIR$/classes/Player.py" />
         <option value="$PROJECT_DIR$/GameInstance.py" />
+        <option value="$PROJECT_DIR$/classes/Information.py" />
       </list>
     </option>
   </component>
@@ -175,18 +188,18 @@
       <option name="presentableId" value="Default" />
       <updated>1551507876093</updated>
       <workItem from="1551507877363" duration="3003000" />
-      <workItem from="1551520410868" duration="8952000" />
+      <workItem from="1551520410868" duration="13369000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11955000" />
+    <option name="totallyTimeSpent" value="16372000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="840" y="23" width="840" height="945" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17293233" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.124060154" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -224,13 +237,6 @@
     <entry file="file://$PROJECT_DIR$/Game/Player.py" />
     <entry file="file://$PROJECT_DIR$/Game/GameInstance.py" />
     <entry file="file://$PROJECT_DIR$/classes/Economy.py" />
-    <entry file="file://$PROJECT_DIR$/classes/Community.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.py" />
     <entry file="file://$USER_HOME$/Desktop/test_signal.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -258,10 +264,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Community.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/classes/Player.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
+        <state relative-caret-position="105">
+          <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -270,11 +283,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GameInstance.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="143" column="36" lean-forward="true" selection-start-line="143" selection-start-column="36" selection-end-line="143" selection-end-column="36" />
+        <state relative-caret-position="249">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Information.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="18" selection-start-column="18" selection-end-column="18" />
         </state>
       </provider>
     </entry>
