@@ -19,6 +19,9 @@ class Economy:
     def set_stockIndex(self, newAmount):
         self.stockIndex = changeAmount
 
+    def get_interestRate(self):
+        return self.interestRate
+
 
 class Bank:
     """Class for bank system"""
@@ -88,10 +91,7 @@ class Realestate:
         return self.value - self.paid
 
     def isPaidOff(self):
-        if self.value == self.paid:
-            return True
-        else:
-            False
+        return self.value == self.paid
 
 
 class Vehicle:
@@ -113,9 +113,4 @@ class Vehicle:
         return self.value - self.paid
 
     def isPaidOff(self):
-        if self.value == self.paid:
-            return True
-        else:
-            False
-
-
+        return self.value == self.paid
