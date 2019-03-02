@@ -3,7 +3,8 @@ from PySide2.QtWidgets import QApplication, QPushButton
 from PySide2.QtCore import QObject, Signal, Slot
 
 import random
-
+from information import quests
+from GameFunctions import GameFunctions
 
 class Economy:
     """Class for economy and market conditions"""
