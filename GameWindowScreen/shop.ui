@@ -29,7 +29,7 @@
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="purchaseVehicleButton">
    <property name="geometry">
     <rect>
      <x>120</x>
@@ -42,7 +42,7 @@
     <string>Purchase Vehicle</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="purchaseRealestateButton">
    <property name="geometry">
     <rect>
      <x>120</x>
@@ -100,13 +100,13 @@
     </property>
    </item>
   </widget>
-  <widget class="QTextEdit" name="textEdit">
+  <widget class="QTextBrowser" name="textBrowser">
    <property name="geometry">
     <rect>
-     <x>490</x>
-     <y>20</y>
-     <width>261</width>
-     <height>111</height>
+     <x>470</x>
+     <y>30</y>
+     <width>271</width>
+     <height>121</height>
     </rect>
    </property>
    <property name="html">
