@@ -3,23 +3,26 @@ from PySide2.QtWidgets import QApplication, QPushButton
 from PySide2.QtCore import QObject, Signal, Slot
 
 from GameFunctions import *
-from windows.investment_window import *
-from windows.property_window import *
+from windows.OptionWindows import *
 from classes.quest import *
-
 
 
 class GameInstance(GameFunctions):
     """Game instance """
 
     def __init__(self, startDate):
-        GameFunctions.__init__(startDate)
+        GameFunctions.__init__(self, startDate)
+
+        PropertyWindow('property_window.ui')
+        InvestmentWindow('property_window.ui')
+
         self.connect_signals_and_slots()
 
         self.my_quest = None
 
     def connect_signals_and_slots(self):
-        OBJECT.SIGNALNAME.connect(FUNCTIONNAME)
+        PropertyWindow.buy_property.connect(self.player_buy_property)
+        InvestmentWindow.make_investment.connect(self.player_make_investment)
 
     def player_action(self):
         pass
