@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1299</width>
+    <width>1305</width>
     <height>657</height>
    </rect>
   </property>
@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="SettingButton">
     <property name="geometry">
      <rect>
       <x>1110</x>
@@ -31,7 +31,7 @@
     <property name="geometry">
      <rect>
       <x>1030</x>
-      <y>60</y>
+      <y>70</y>
       <width>256</width>
       <height>241</height>
      </rect>
@@ -103,44 +103,44 @@
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QPushButton" name="pushButton_4">
-       <property name="text">
-        <string>Stock</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_6">
-       <property name="text">
-        <string>FixedSaving</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_7">
-       <property name="text">
-        <string>Shop</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="CryptoButton">
        <property name="text">
         <string>Cryptocurrency Market</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_5">
+      <widget class="QPushButton" name="QuestButton">
+       <property name="text">
+        <string>Quests</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="StockButton">
+       <property name="text">
+        <string>Stock</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="BankButton">
        <property name="text">
         <string>Bank</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="FixedSavingButton">
        <property name="text">
-        <string>Quests</string>
+        <string>FixedSaving</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="ShopButton">
+       <property name="text">
+        <string>Shop</string>
        </property>
       </widget>
      </item>
@@ -152,7 +152,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1299</width>
+     <width>1305</width>
      <height>26</height>
     </rect>
    </property>
