@@ -88,6 +88,7 @@ class Player:
         self.payments = payments
         self.assets = PlayerAssets()
         self.netWorth = self.compute_net_worth()
+        self.my_quest = None
 
     def compute_net_worth(self):
         netWorth = self.savings
@@ -101,3 +102,5 @@ class Player:
 
         return netWorth
 
+    def set_quest(self, quest):
+        self.my_quest = quest
