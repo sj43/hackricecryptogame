@@ -69,6 +69,16 @@ class GameInstance:
         self.player.assets.add_investment(!!!property.stock.name!!!)
         self.player.savings -= investmentValue
 
+    def get_income(self):
+        self.player.savings += self.player.salary
+
+        for cryptoAsset in self.player.assets.cryptocurrency:
+            !!!self.player.savings += cryptoAsset.income()
+        for investmentAsset in self.player.assets.investment:
+            self.player.savings += investmentAsset.income()
+        for propertyAsset in self.player.assets.property:
+            self.player.savings += propertyAsset.income()
+
     @Slot
     def pay_living_expenses(self):
         self.pay_living_expenses.emit(self.player.livingExpenses)
@@ -81,30 +91,29 @@ class GameInstance:
             self.player.savings -= self.player.livingExpenses
 
     def sell_assets(self, paymentLeft):
-        for investmentAsset in self.player.assets.investment:
-            paymentLeft -= investmentAsset.investmentValue
+        for cryptoAsset in self.player.assets.cryptocurrency:
             if paymentLeft <= 0:
                 break
+            !!!paymentLeft -= !!!cryptoAsset!!!
+            !!!self.player.assets.investment.remove(cryptoAsset)
         for investmentAsset in self.player.assets.investment:
+            if paymentLeft <= 0:
+                break
             paymentLeft -= investmentAsset.investmentValue
             self.player.assets.investment.remove(investmentAsset)
+        for propertyAsset in self.player.assets.property:
             if paymentLeft <= 0:
                 break
-        for propertyAsset in self.player.assets.property:
             paymentLeft -= propertyAsset.propertyValue
             self.player.assets.investment.remove(propertyAsset)
-            if paymentLeft <= 0:
-                break
+
+        return -paymentLeft
 
     def pay_loans(self):
         paymentLeft = self.player.payments
-        if self.player.savings >= paymentLeft:
-            self.player.savings -= paymentLeft
-        else:
-            paymentLeft -= self.player.savings
-            self.player.savings = 0
-
-            self.player.savings = -paymentLeft
+        self.player.savings -= paymentLeft
+        if self.player.savings < 0:
+            self.player.savings = self.sell_assets(-self.player.savings)
 
     @Slot
     def pay_card(self):
@@ -112,21 +121,30 @@ class GameInstance:
 
     @Slot(int)
     def choice_card(self, choiceCard):
+        paymentLeft = 5000 - self.player.card
         if choiceCard == 1:
-            if self.player.savings >= self.player.card:
-                self.player.savings -= self.player.card
-                self.player.card = 0
-            else:
-                self.player.card -= self.player.savings
-                self.player.savings = 0
+            self.player.savings -= paymentLeft
+            if self.player.savings < 0:
+                self.player.savings = self.sell_assets(-self.player.savings)
+            self.player.card = 0
         elif choiceCard == 2:
-            self.player.savings -= self.player.livingExpenses
+            self.player.savings -= paymentLeft * 0.015
+            if self.player.savings < 0:
+                self.player.savings = self.sell_assets(-self.player.savings)
 
+    @Slot
     def end_turn(self):
         # update player info
+        self.get_income()
+
         self.pay_living_expenses()
         self.pay_loans()
         self.pay_card()
+
+        self.player.salary *= 1.0025
+        self.player.credit = COMPUTE CREDIT
+        self.player.netWorth = self.player.compute_net_worth()
+
         # update community info
         # update crypto info
         # update screen info
