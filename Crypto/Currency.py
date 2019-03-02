@@ -29,8 +29,3 @@ class Market:
     def empty(self):
         return Market(set())
 
-def allcrypto():
-    collection = set()
-
-crypto_to_abbreviation = {"Cardano":"ada","bitcoin":"bch",
-                          }
