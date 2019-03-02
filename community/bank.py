@@ -1,4 +1,4 @@
-class bank:
+class Bank:
     """
     Class for bank system.
     """
