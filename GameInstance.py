@@ -3,6 +3,8 @@ from PySide2.QtWidgets import QApplication, QPushButton
 from PySide2.QtCore import QObject, Signal, Slot
 
 from GameFunctions import *
+from windows.investment_window import *
+from windows.property_window import *
 
 
 class GameInstance(GameFunctions):
