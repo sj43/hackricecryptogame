@@ -12,7 +12,8 @@ class GameInstance(GameFunctions):
 
     def __init__(self, startDate):
         GameFunctions.__init__(self, startDate)
-    
+
+        MainWindow('main_window.ui')
         PropertyWindow('property_window.ui')
         InvestmentWindow('property_window.ui')
 
@@ -32,7 +33,12 @@ class GameInstance(GameFunctions):
     
         ##pay_living_expenses = Signal(float)
         ##pay_card = Signal(float)
-    
+
+        MainWindow.open_bank.connect(BankWindow.open_window)
+        ##MainWindow.open_crypto.connect(CryptoWindow.open_window)
+        MainWindow.open_property.connect(PropertyWindow.open_window)
+        MainWindow.open_investment.connect(InvestmentWindow.open_window)
+
     def player_action(self):
         pass
     

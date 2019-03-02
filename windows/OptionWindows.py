@@ -34,6 +34,8 @@ class PropertyWindow(QObject):
         vehicle_middle_button.clicked.connect(self.buy_vehicle_middle)
         vehicle_luxury_button.clicked.connect(self.buy_vehicle_luxury)
 
+        self.window.hide()
+
     def open_window(self):
         self.window.show()
 
@@ -94,6 +96,8 @@ class InvestmentWindow(QObject):
         fixed_6_button.clicked.connect(self.buy_fixed_6)
         fixed_12_button.clicked.connect(self.buy_fixed_12())
 
+        self.window.hide()
+
     def open_window(self):
         self.window.show()
 
@@ -149,6 +153,8 @@ class BankWindow(QObject):
         loan_30_button.clicked.connect(self.loan_30)
         loan_10_button.clicked.connect(self.loan_10)
 
+        self.window.hide()
+
     def open_window(self):
         self.window.show()
 
@@ -172,3 +178,49 @@ class BankWindow(QObject):
         self.get_loan.emit(0.1)
         self.window.hide()
 
+
+class MainWindow(QObject):
+
+    open_bank = Signal()
+    open_crypto = Signal()
+    open_property = Signal()
+    open_investment = Signal()
+
+    def __init__(self, ui_file, parent=None):
+        super(MainWindow, self).__init__(parent)
+        ui_file = QFile(ui_file)
+        ui_file.open(QFile.ReadOnly)
+
+        loader = QUiLoader()
+        self.window = loader.load(ui_file)
+        ui_file.close()
+
+        bank_button = self.window.findChild(QPushButton, 'BankButton')
+        crypto_button = self.window.findChild(QPushButton, 'CryptoButton')
+        property_button = self.window.findChild(QPushButton, 'PropertyButton')
+        investment_button = self.window.findChild(QPushButton, 'InvestmentButton')
+
+        bank_button.clicked.connect(self.open_bank_window)
+        crypto_button.clicked.connect(self.open_crypto_window)
+        property_button.clicked.connect(self.open_property_window)
+        investment_button.clicked.connect(self.open_investment_window)
+
+        self.window.show()
+
+    def open_window(self):
+        self.window.show()
+
+    def close_window(self):
+        self.window.hide()
+
+    def open_bank_window(self):
+        self.open_bank.emit()
+
+    def open_crypto_window(self):
+        self.open_crypto.emit()
+
+    def open_property_window(self):
+        self.open_property.emit()
+
+    def open_investment_window(self):
+        self.open_investment.emit()
