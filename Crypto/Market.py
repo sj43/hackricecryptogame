@@ -1,7 +1,7 @@
 import csv
-from Crypto.Parse import finaldict
+from hackricecryptogame.Crypto.Parsing import finaldict
 
-dataset = p.finaldict()
+finaldict = finaldict()
 class Market:
     # The Market is made up of a date and a dictionary of Currency prices mapped to Currency names
     def __init__(self, date, collection):
