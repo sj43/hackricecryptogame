@@ -1,96 +1,51 @@
-import economy
-import accountinformation
-
-
 class bank:
     """
     Class for bank system.
     """
     def __init__(self, player):
-        self.interest_rate =
-        self.bank_capital = economy.total_money_in_economy
-        self.account = accountinformation.accountinfo
+        pass
 
-    def menu(self):
-        print("Welcome to Bank!")
-        print("What would you like to do?")
-        print("")
-        print("1. Deposit $$")
-        print("2. Withdraw $$")
-        print("3. Loan $$")
-        print("4. Check Current Balance")
-        print("5. Check Credit")
-        print("6. Leave Bank")
-        print("")
-        user_input = input()
-        if user_input == 1:
-            print("How much?")
-            m = input()
-            deposit(m)
-        if user_input == 2:
-            print("How much?")
-            m = input()
-            withdraw(m)
-        if user_input == 3:
-            print("How much?")
-            m = input()
-            withdraw(m)
-        if user_input == 4:
-            print("Your balance is: ", printBalance())
-        if user_input == 5:
-            print("Your credit is: ", checkCredit())
-        if user_input == 6:
-            print("Thank you!")
-
-    def deposit(self, amount):
-        self.account["savings"] += amount
-        player.savings -= amount
-
-    def withdraw(self. amount):
-        if self.account["savings"] >= amount:
-            self.account["savings"] -= amount
-            player.savings += amount
+    def updateCreditScore(self):
+        if player.creditcard < 1000:
+            amount_to_change = -300
+        elif player.creditcard < 3000:
+            amount_to_change = -100
+        elif player.creditcard < 4500:
+            amount_to_change = -50
+        elif player.creditcard < 5000:
+            amount_to_change = -20
         else:
-            print("Not enough money :(")
+            amount_to_change = 20
+        return amount_to_change
 
-    def loan(self, amount):
+    def howMuchCanILoan(self):
+        if player.credit >= 720:
+            return 3*player.compute_net_worth()
+        elif player.credit >= 680:
+            return 2*player.compute_net_worth()
+        elif player.credit >= 640:
+            return player.compute_net_worth()
+        else:
+            return -1
+
+    def getLoanInterest(self):
         """
         FICO credit score ranges from 300 to 850.
         less than 660 is poor, over 660 is good, and 800 is excellent.
         """
-        if self.account["credit"] > 720:
-            self.interest_rate = 0.11
-            total_money_in_economy -= amount
-            player.debt += amount
-            player.savings += amount
-        else if self.account["credit"] > 680:
-            self.interest_rate = 0.14
-            total_money_in_economy -= amount
-            player.debt += amount
-            player.savings += amount
-        else if self.account["credit"] > 640:
-            self.interest_rate = 0.18
-            total_money_in_economy -= amount
-            player.debt += amount
-            player.savings += amount
+        if player.credit >= 720:
+            return 0.11
+        elif player.credit >= 680:
+            return 0.14
+        elif player.credit >= 640:
+            return 0.19
         else:
-            print("Your credit is too low for any loan...")
-
-    def printBalance(self):
-        return self.account["savings"]
-
-    def checkCredit(self):
-        return self.account["credit"]
+            return -1
 
     def calculateNewDebt(self):
         """
         Needs to be called every month!
         """
-        ir = self.account["interest_rate"]
+        ir = player.interest_rate
         ir /= 12.0
-        self.account["debt"] = self.account["debt"] * (1 + ir)
-
-
-
-
-B = bank()
+        return player.debt * (1 + ir)
