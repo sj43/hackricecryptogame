@@ -2,8 +2,11 @@ import sys
 from PySide2.QtWidgets import QApplication, QPushButton
 from PySide2.QtCore import QObject, Signal, Slot
 
+import random
+
 from classes.Player import *
 from classes.Community import *
+from classes.Information import *
 
 
 class GameInstance:
@@ -53,7 +56,7 @@ class GameInstance:
 
     @Slot(int)
     def player_buy_property(self, choiceProperty):
-        propertyCost = !!!property.car.cost!!!
+        propertyCost = get_asset_cost("property", choiceProperty)
 
         self.player.assets.add_property(!!!property.car.name!!!)
         self.player.savings -= propertyCost
@@ -132,6 +135,35 @@ class GameInstance:
             if self.player.savings < 0:
                 self.player.savings = self.sell_assets(-self.player.savings)
 
+    def update_salary(self):
+        self.player.salary *= 1.0025
+
+    def update_credit(self):
+        self.player.credit += self.bank.updateCreditScore(self.card)
+        if self.player.credit < 300:
+            self.player.credit = 300
+        if self.player.credit > 850:
+            self.player.credit = 850
+
+    def update_assets(self):
+        for investmentAsset in self.player.assets.investment:
+            if "stock" in investmentAsset.name:
+                growth = 1.0 + (random.gauss(self.economy.growthGDP, 5) / 100)
+                if (growth < -0.5) or (growth > 0.5):
+                    growth = 1.0
+                investmentAsset.investmentValue *= growth
+            if "fixed" in investmentAsset.name:
+                if investmentAsset.fixedCount == 0:
+                    self.player.assets.investment.remove(investmentAsset)
+        for propertyAsset in self.player.assets.property:
+            if "estate" in propertyAsset.name:
+                propertyAsset.propertyValue *= (1 + self.economy.interestRate/12.0)
+            if "vehicle" in propertyAsset.name:
+                propertyAsset.propertyValue *= 0.98
+
+    def update_netWorth(self):
+        self.player.netWorth = self.player.compute_net_worth()
+
     @Slot
     def end_turn(self):
         # update player info
@@ -141,9 +173,10 @@ class GameInstance:
         self.pay_loans()
         self.pay_card()
 
-        self.player.salary *= 1.0025
-        self.player.credit = COMPUTE CREDIT
-        self.player.netWorth = self.player.compute_net_worth()
+        self.update_salary()
+        self.update_credit()
+        self.update_assets()
+        self.update_netWorth()
 
         # update community info
         # update crypto info

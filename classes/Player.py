@@ -2,44 +2,46 @@ import sys
 from PySide2.QtWidgets import QApplication, QPushButton
 from PySide2.QtCore import QObject, Signal, Slot
 
+import random
+
+from classes.Community import *
+from classes.Information import *
 
 class Property:
-    """Class for large assets (real estate, vehicles, jewelery)"""
+    """Class for large assets (real estate, vehicles)"""
 
-    def __init__(self, name, propertyValue, payment, income):
+    def __init__(self, name, propertyValue, income):
         self.name = name
         self.propertyValue = propertyValue
-        self.payment = payment
-        self.income = income
 
-    def change_value(self, changeAmount):
-        self.propertyValue += changeAmount
-
-    def change_payment(self, changeAmount):
-        self.payment += changeAmount
-
-    def change_income(self, changeAmount):
-        self.income += changeAmount
-
+    def income(self):
+        if "estate" in self.name:
+            return self.propertyValue * 0.01
+        if "vehicle" in self.name:
+            return self.propertyValue * 0.02
 
 class Investment:
-    """Class for financial investments (stocks, fixed savings, insurance)"""
+    """Class for financial investments (stocks, fixed savings)"""
 
-    def __init__(self, name, investmentValue, payment, income):
+    def __init__(self, name, investmentValue, fixedCount=0):
         self.name = name
         self.investmentValue = investmentValue
-        self.payment = payment
-        self.income = income
+        self.fixedCount = fixedCount
 
-    def change_value(self, changeAmount):
-        self.investmentValue += changeAmount
-
-    def change_payment(self, changeAmount):
-        self.payment += changeAmount
-
-    def change_income(self, changeAmount):
-        self.income += changeAmount
-
+    def income(self):
+        if "stock" in self.name:
+            if "low" in self.name:
+                return self.investmentValue * random.uniform(-0.002, 0.004)
+            if "avg" in self.name:
+                return self.investmentValue * random.uniform(-0.004, 0.008)
+            if "high" in self.name:
+                return self.investmentValue * random.uniform(-0.008, 0.016)
+        if "fixed" in self.name:
+            self.fixedCount -= 1
+            if self.fixedCount == 0:
+                return self.investmentValue * 1.015
+            else:
+                return -1
 
 class CryptoCurrency:
     """Class for cryptocurrency"""
@@ -47,9 +49,6 @@ class CryptoCurrency:
     def __init__(self, name, currencyValue):
         self.name = name
         self.currencyValue = currencyValue
-
-    def change_value(self, changeAmount):
-        self.currencyValue += changeAmount
 
 
 class PlayerAssets:
@@ -60,14 +59,14 @@ class PlayerAssets:
         self.investment = []
         self.cryptocurrency = []
 
-    def add_property(self, property):
-        self.property.append(property)
+    def add_property(self, propertyAsset):
+        self.property.append(propertyAsset)
 
-    def add_investment(self, investment):
-        self.property.append(investment)
+    def add_investment(self, investmentAsset):
+        self.property.append(investmentAsset)
 
-    def add_cryptocurrency(self, cryptocurrency):
-        self.property.append(cryptocurrency)
+    def add_cryptocurrency(self, cryptoAsset):
+        self.property.append(cryptoAsset)
 
 
 class Player:
@@ -95,17 +94,3 @@ class Player:
 
         return netWorth
 
-    def change_salary(self, changeAmount):
-        self.salary += changeAmount
-
-    def change_livingExpenses(self, changeAmount):
-        self.livingExpenses += changeAmount
-
-    def change_savings(self, changeAmount):
-        self.savings += changeAmount
-
-    def change_credit(self, changeAmount):
-        self.credit += changeAmount
-
-    def change_debt(self, changeAmount):
-        self.payments += changeAmount

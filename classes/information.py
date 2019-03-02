@@ -1,13 +1,5 @@
-import Community
-
-def vehicleMonthlyPayment(P, ir):
-    c = ir/12.0
-    return (c*P)/(1-(1+c)^(-60)) # always 5 year payment
-
-def mortgageFormula(L, ir):
-    c = ir/12.0
-    return L[c(1 + c)*60]/[(1 + c)*60 - 1]
-
+def get_asset_cost:
+    pass
 
 # Vehicle
 Bicycle = Community.Vehicle("Bicycle", 300, vehicleMonthlyPayment(300, Community.Economy.get_interestRate()))
