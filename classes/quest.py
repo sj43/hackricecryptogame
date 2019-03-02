@@ -17,48 +17,48 @@ class Quest:
 
     def start_info_check(self, player):
         if self.whichquest == 1:
-            return quest1_check(player.asset.property)
+            quest1_check(player.asset.property)
         elif self.whichquest == 2:
-            return quest2_check(player.asset.property)
+            quest2_check(player.asset.property)
         elif self.whichquest == 3:
-            return quest3_check(player)
+            quest3_check(player.savings)
         elif self.whichquest == 4:
-            return quest4_check(player)
+            quest4_check(player.netWorth)
         elif self.whichquest == 5:
-            return quest5_check(player)
+            quest5_check(player.netWorth)
         elif self.whichquest == 6:
-            return quest6_check(player)
+            quest6_check(player.payments, player.salary)
         elif self.whichquest == 7:
-            return quest7_check(player)
+            quest7_check(player.credit)
         else:
-            return quest8_check(player)
+            quest8_check(player.savings, player.assets.investment)
 
     def quest1_check(self, property):
-        return
+        self.info_to_check = len(property) + 1
 
-    def quest2_check(self):
-        pass
+    def quest2_check(self, property):
+        self.info_to_check = len(property) + 1
 
-    def quest3_check(self):
-        pass
+    def quest3_check(self, savings):
+        lost = 0.05 * savings
+        self.info_to_check = savings
+        savings -= lost
 
-    def quest3_check(self):
-        pass
+    def quest4_check(self, netWorth):
+        self.info_to_check = netWorth + 100000
 
-    def quest4_check(self):
-        pass
+    def quest5_check(self, netWorth):
+        self.info_to_check = netWorth + 1000000
 
-    def quest5_check(self):
-        pass
+    def quest6_check(self, payments, salary):
+        self.info_to_check = payments - 3*salary
 
-    def quest6_check(self):
-        pass
+    def quest7_check(self, credit):
+        self.info_to_check = credit + 100
 
-    def quest7_check(self):
-        pass
-
-    def quest8_check(self):
-        pass
+    def quest8_check(self, savings, investment):
+        self.info_to_check = savings
+        del investment[:]
 
     def check_quest_overall_success(self, current_date, player):
         if current_date == self.end_month:
@@ -73,41 +73,38 @@ class Quest:
         elif whichquest == 2:
             return quest2_check(player.asset.property)
         elif whichquest == 3:
-            return quest3_check(player)
+            return quest3_check(player.savings)
         elif whichquest == 4:
-            return quest4_check(player)
+            return quest4_check(player.netWorth)
         elif whichquest == 5:
-            return quest5_check(player)
+            return quest5_check(player.netWorth)
         elif whichquest == 6:
-            return quest6_check(player)
+            return quest6_check(player.payments)
         elif whichquest == 7:
-            return quest7_check(player)
+            return quest7_check(player.credit)
         else:
-            return quest8_check(player)
+            return quest8_check(player.savings, player.investment)
 
     def quest1_check(self, property):
-        return
+        self.info_to_check <= len(property)
 
-    def quest2_check(self):
-        pass
+    def quest2_check(self, property):
+        self.info_to_check <= len(property)
 
-    def quest3_check(self):
-        pass
+    def quest3_check(self, savings):
+        self.info_to_check <= savings
 
-    def quest3_check(self):
-        pass
+    def quest4_check(self, netWorth):
+        self.info_to_check <= netWorth
 
-    def quest4_check(self):
-        pass
+    def quest5_check(self, netWorth):
+        self.info_to_check <= netWorth
 
-    def quest5_check(self):
-        pass
+    def quest6_check(self, payments):
+        self.info_to_check >= payments
 
-    def quest6_check(self):
-        pass
+    def quest7_check(self, credit):
+        self.info_to_check <= credit
 
-    def quest7_check(self):
-        pass
-
-    def quest8_check(self):
-        pass
+    def quest8_check(self, savings, investment):
+        self.info_to_check <= savings

@@ -42,7 +42,7 @@ class GameInstance(GameFunctions):
                 self.my_quest = Quest()
         else: # check for existing quests success
             if self.my_quest.check_quest_overall_success(self.date, self.player):
-                pass #reward
+                pass #reward (scoring system)
             self.my_quest = None
 
 

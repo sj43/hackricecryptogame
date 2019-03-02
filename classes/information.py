@@ -24,7 +24,7 @@ investment_choices = (("stock_low", 1000),
 # Quests
 
 quests = {1: ("The economy is booming! It’s a chance for you to move to a new house! Purchase a new house. (within 3 months)", 3),
-          2: ("You got into an accident! You must sell your crashed vehicle (instantly) and purchase a new one (within this month)", 0),
+          2: ("You got into an accident! You must purchase a new one (within this month)", 0),
           3: ("You got robbed!!! You lose 5 percent of your money (instantly). Exchange cryptocurrencies to make up for your loss. (within 4 months)", 4),
           4: ("Are you confident in exchanging cryptocurrencies and making money? Increase your net value by 100000 (within 6 turns)", 6),
           5: ("Show me that you can become a millionaire. Increase your net value by $1000000 by exchanging cryptocurrencies (within 15 turns)", 15),
