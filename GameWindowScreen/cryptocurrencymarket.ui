@@ -32,10 +32,10 @@
   <widget class="QTableWidget" name="tableWidget">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>120</y>
+     <x>190</x>
+     <y>170</y>
      <width>191</width>
-     <height>411</height>
+     <height>301</height>
     </rect>
    </property>
    <row>
@@ -71,21 +71,6 @@
    <row>
     <property name="text">
      <string>Coin7</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>Coin8</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>Coin9</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>Coin10</string>
     </property>
    </row>
    <column>
@@ -128,169 +113,98 @@
      <string>0.00</string>
     </property>
    </item>
-   <item row="7" column="0">
-    <property name="text">
-     <string>0.00</string>
-    </property>
-   </item>
-   <item row="8" column="0">
-    <property name="text">
-     <string>0.00</string>
-    </property>
-   </item>
-   <item row="9" column="0">
-    <property name="text">
-     <string>0.00</string>
-    </property>
-   </item>
   </widget>
   <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>150</y>
+     <x>400</x>
+     <y>200</y>
      <width>395</width>
-     <height>439</height>
+     <height>271</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="6" column="0">
-     <widget class="QPushButton" name="pushButton_13">
-      <property name="text">
-       <string>BUY</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QPushButton" name="pushButton_7">
-      <property name="text">
-       <string>SELL</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="text">
-       <string>SELL</string>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="1">
-     <widget class="QPushButton" name="pushButton_16">
-      <property name="text">
-       <string>SELL</string>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="0">
-     <widget class="QPushButton" name="pushButton_19">
-      <property name="text">
-       <string>BUY</string>
-      </property>
-     </widget>
-    </item>
     <item row="3" column="0">
-     <widget class="QPushButton" name="pushButton_6">
-      <property name="text">
-       <string>BUY</string>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="1">
-     <widget class="QPushButton" name="pushButton_18">
-      <property name="text">
-       <string>SELL</string>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="0">
-     <widget class="QPushButton" name="pushButton_17">
+     <widget class="QPushButton" name="BuyCoin4Button">
       <property name="text">
        <string>BUY</string>
       </property>
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="SellCoin2Button">
       <property name="text">
        <string>SELL</string>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="0">
-     <widget class="QPushButton" name="pushButton_15">
-      <property name="text">
-       <string>BUY</string>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="1">
-     <widget class="QPushButton" name="pushButton_20">
-      <property name="text">
-       <string>SELL</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="1">
-     <widget class="QPushButton" name="pushButton_14">
-      <property name="text">
-       <string>SELL</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="0">
-     <widget class="QPushButton" name="pushButton_11">
-      <property name="text">
-       <string>BUY</string>
       </property>
      </widget>
     </item>
     <item row="4" column="0">
-     <widget class="QPushButton" name="pushButton_9">
+     <widget class="QPushButton" name="BuyCoin5Button">
       <property name="text">
        <string>BUY</string>
       </property>
      </widget>
     </item>
     <item row="4" column="1">
-     <widget class="QPushButton" name="pushButton_10">
-      <property name="text">
-       <string>SELL</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QPushButton" name="pushButton_5">
-      <property name="text">
-       <string>BUY</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="1">
-     <widget class="QPushButton" name="pushButton_12">
-      <property name="text">
-       <string>SELL</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QPushButton" name="pushButton">
-      <property name="text">
-       <string>BUY</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QPushButton" name="pushButton_8">
+     <widget class="QPushButton" name="SellCoin5Button">
       <property name="text">
        <string>SELL</string>
       </property>
      </widget>
     </item>
     <item row="1" column="0">
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="BuyCoin2Button">
       <property name="text">
        <string>BUY</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="BuyCoin3Button">
+      <property name="text">
+       <string>BUY</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QPushButton" name="SellCoin1Button">
+      <property name="text">
+       <string>SELL</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QPushButton" name="BuyCoin6Button">
+      <property name="text">
+       <string>BUY</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QPushButton" name="SellCoin6Button">
+      <property name="text">
+       <string>SELL</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QPushButton" name="BuyCoin1Button">
+      <property name="text">
+       <string>BUY</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="SellCoin4Button">
+      <property name="text">
+       <string>SELL</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QPushButton" name="SellCoin3Button">
+      <property name="text">
+       <string>SELL</string>
       </property>
      </widget>
     </item>
@@ -302,7 +216,7 @@
      <x>860</x>
      <y>130</y>
      <width>256</width>
-     <height>391</height>
+     <height>331</height>
     </rect>
    </property>
    <row>
@@ -381,8 +295,8 @@ p, li { white-space: pre-wrap; }
   <widget class="QTextBrowser" name="textBrowser_2">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>100</y>
+     <x>400</x>
+     <y>150</y>
      <width>191</width>
      <height>41</height>
     </rect>
@@ -398,8 +312,8 @@ p, li { white-space: pre-wrap; }
   <widget class="QTextBrowser" name="textBrowser_3">
    <property name="geometry">
     <rect>
-     <x>570</x>
-     <y>100</y>
+     <x>600</x>
+     <y>150</y>
      <width>191</width>
      <height>41</height>
     </rect>
