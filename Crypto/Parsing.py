@@ -19,9 +19,10 @@ def read(cryptoname):
                 dict[row['date']] = row['price(USD)']
     return dict
 
-finaldict = {}
-for item in crypto_to_data:
-    finaldict[item] = read(item)
+def finaldict():
+    finaldict = {}
+    for item in crypto_to_data:
+        finaldict[item] = read(item)
+    return finaldict
 
-print(finaldict)
 

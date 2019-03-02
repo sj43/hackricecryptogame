@@ -2,12 +2,11 @@ import sys
 from PySide2.QtWidgets import QApplication, QPushButton
 from PySide2.QtCore import QObject, Signal, Slot
 
-import random
-
-from classes.Player import *
+from hackricecryptogame.classes.Player import *
 from classes.Community import *
 from classes.Information import *
-
+from Crypto.Parse import *
+from Crypto.Market import *
 
 class GameFunctions:
     """Game functions"""
