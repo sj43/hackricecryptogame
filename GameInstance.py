@@ -1,6 +1,7 @@
 from classes.Player import *
 from classes.Community import *
 
+
 class GameInstance:
     """Game instance """
 
@@ -9,4 +10,10 @@ class GameInstance:
 
         self.player = PlayerClass(0, 0, 0, 0, 0, 0)
         self.economy = Economy(0, 0, 0)
+        self.bank = Bank()
+
+    def end_turn(self):
+        # update player info
+        # update community info
+        pass
 
