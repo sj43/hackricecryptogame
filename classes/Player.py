@@ -7,6 +7,7 @@ import random
 from classes.Community import *
 from classes.Information import *
 
+
 class Property:
     """Class for large assets (real estate, vehicles)"""
 
@@ -19,6 +20,7 @@ class Property:
             return self.propertyValue * 0.01
         if "vehicle" in self.name:
             return self.propertyValue * 0.02
+
 
 class Investment:
     """Class for financial investments (stocks, fixed savings)"""
@@ -49,6 +51,7 @@ class Investment:
                 return self.investmentValue * (1 + self.fixedInterest)
             else:
                 return -1
+
 
 class CryptoCurrency:
     """Class for cryptocurrency"""

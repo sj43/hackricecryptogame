@@ -13,7 +13,7 @@ class GameFunctions:
     """Game functions"""
 
     max_loan_amount = Signal(float)
-    loan_interest = Signal(float)
+    see_loan = Signal()
     see_property = Signal()
     see_investment = Signal()
     pay_living_expenses = Signal(float)
@@ -22,22 +22,22 @@ class GameFunctions:
     def __init__(self, startDate):
         self.date = startDate
 
-        self.player = Player(0, 0, 0, 0, 0, 0)
-        self.economy = Economy(0, 0, 0)
+        self.player = Player(100000, 500, 100000, 5000, 700, 0)
+        self.economy = Economy(0.05, 5.0)
         self.bank = Bank()
 
     @Slot
-    def player_ask_loan(self, salary, credit):
-        maxLoanAmount = self.bank.howMuchCanILoan(salary, credit)
-        loanInterest = self.bank.getLoanInterest(credit)
+    def player_ask_loan(self):
+        maxLoanAmount = self.bank.howMuchCanILoan(self.player.salary, self.player.cedit)
+        loanInterest = self.bank.getLoanInterest(self.player.credit)
 
-        self.max_loan_amount.emit(maxLoanAmount)
-        self.loan_interest.emit(loanInterest)
+        self.max_loan_amount.emit(maxLoanAmount, loanInterest)
+        self.see_loan.emit()
 
     @Slot(float)
-    def player_get_loan(self, choicePercent, salary, credit):
-        loanAmount = choicePercent * self.bank.howMuchCanILoan(salary, credit)
-        loanInterest = self.bank.getLoanInterest(credit)
+    def player_get_loan(self, choicePercent):
+        loanAmount = choicePercent * self.bank.howMuchCanILoan(self.player.salary, self.player.credit)
+        loanInterest = self.bank.getLoanInterest(self.player.credit)
 
         self.player.savings += loanAmount
         self.player.payments -= (loanInterest/12.0)*loanAmount

@@ -1,8 +1,8 @@
 import sys
 
 from PySide2.QtUiTools import QUiLoader
-from PySide2.QtWidgets import QApplication, QPushButton
-from PySide2.QtCore import QFile, QObject, Signal, Slot
+from PySide2.QtWidgets import QApplication, QPushButton, QListWidget
+from PySide2.QtCore import QFile, QObject, QString, Signal, Slot
 
 
 class PropertyWindow(QObject):
@@ -34,6 +34,7 @@ class PropertyWindow(QObject):
         vehicle_middle_button.clicked.connect(self.buy_vehicle_middle)
         vehicle_luxury_button.clicked.connect(self.buy_vehicle_luxury)
 
+    def open_window(self):
         self.window.show()
 
     def close_window(self):
@@ -93,6 +94,7 @@ class InvestmentWindow(QObject):
         fixed_6_button.clicked.connect(self.buy_fixed_6)
         fixed_12_button.clicked.connect(self.buy_fixed_12())
 
+    def open_window(self):
         self.window.show()
 
     def close_window(self):
@@ -121,6 +123,55 @@ class InvestmentWindow(QObject):
     def buy_fixed_12(self):
         self.buy_investment.emit(6)
         self.window.hide()
+
+
+class BankWindow(QObject):
+
+    get_loan = Signal(int)
+
+    def __init__(self, ui_file, parent=None):
+        super(BankWindow, self).__init__(parent)
+        ui_file = QFile(ui_file)
+        ui_file.open(QFile.ReadOnly)
+
+        loader = QUiLoader()
+        self.window = loader.load(ui_file)
+        ui_file.close()
+
+        interest_list = self.window.findChild(QListWidget, 'interest_list')
+        back_button = self.window.findChild(QPushButton, 'back_button')
+        loan_100_button = self.window.findChild(QPushButton, 'loan_100_button')
+        loan_30_button = self.window.findChild(QPushButton, 'loan_30_button')
+        loan_10_button = self.window.findChild(QPushButton, 'loan_10_button')
+
+        back_button.clicked.connect(self.close_window)
+        loan_100_button.clicked.connect(self.loan_100)
+        loan_30_button.clicked.connect(self.loan_30)
+        loan_10_button.clicked.connect(self.loan_10)
+
+    def open_window(self):
+        self.window.show()
+
+    def close_window(self):
+        self.window.hide()
+
+    def set_loan_amount(self, maxLoanAmount, loanInterest):
+        self.interest_list.clear()
+        self.interest_list.addItem(QString("Max Loan Amount: ") + QString(maxLoanAmount))
+        self.interest_list.addItem(QString("Loan Interest: ") + QString(loanInterest))
+
+    def loan_100(self):
+        self.get_loan.emit(1.0)
+        self.window.hide()
+
+    def loan_30(self):
+        self.get_loan.emit(0.3)
+        self.window.hide()
+
+    def loan_10(self):
+        self.get_loan.emit(0.1)
+        self.window.hide()
+
 
 
 app = QApplication(sys.argv)
