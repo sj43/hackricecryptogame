@@ -3,7 +3,7 @@ from PySide2.QtWidgets import QApplication, QPushButton
 from PySide2.QtCore import QObject, Signal, Slot
 
 from GameFunctions import *
-
+from classes.quest import *
 
 class GameInstance(GameFunctions):
     """Game instance """
@@ -18,10 +18,18 @@ class GameInstance(GameFunctions):
     def player_action(self):
         pass
 
+    def get_date(self):
+        return self.date
+
     @Slot
     def end_turn(self):
         # update player info
+
         self.get_income()
+
+        # show quest here
+        quest = Quest()
+
 
         self.pay_living_expenses()
         self.pay_loans()
@@ -32,14 +40,7 @@ class GameInstance(GameFunctions):
         self.update_assets()
         self.update_netWorth()
 
-        self.date[1] += 1
-        if self.date[1] == 13:
-            self.date[0] += 1
-            self.date[1] = 0
-
         # update community info
         # update crypto info
         # update screen info
         pass
-
-
