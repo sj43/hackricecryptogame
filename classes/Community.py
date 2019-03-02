@@ -67,7 +67,6 @@ class Bank:
         return player.debt * (1 + ir)
 
 
-
 class Realestate:
     def __init__(self, name, value, rent):
         self.name = name
