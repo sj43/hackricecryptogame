@@ -92,64 +92,10 @@
      </property>
     </item>
    </widget>
-   <widget class="QWidget" name="formLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>450</x>
-      <y>150</y>
-      <width>341</width>
-      <height>451</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QPushButton" name="CryptoButton">
-       <property name="text">
-        <string>Cryptocurrency Market</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="QuestButton">
-       <property name="text">
-        <string>Quests</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="StockButton">
-       <property name="text">
-        <string>Stock</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="BankButton">
-       <property name="text">
-        <string>Bank</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="FixedSavingButton">
-       <property name="text">
-        <string>FixedSaving</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="ShopButton">
-       <property name="text">
-        <string>Shop</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
    <widget class="QTextBrowser" name="textBrowser">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>400</x>
       <y>20</y>
       <width>481</width>
       <height>111</height>
@@ -183,11 +129,69 @@ p, li { white-space: pre-wrap; }
    <widget class="QLCDNumber" name="lcdNumber">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>80</x>
       <y>50</y>
       <width>211</width>
       <height>131</height>
      </rect>
+    </property>
+    <property name="value" stdset="0">
+     <double>20.000000000000000</double>
+    </property>
+    <property name="intValue" stdset="0">
+     <number>20</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="CryptoButton">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>150</y>
+      <width>350</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Cryptocurrency Market</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="StockButton">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>260</y>
+      <width>351</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Investments</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BankButton">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>370</y>
+      <width>350</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Bank</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="PropertyButton">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>480</y>
+      <width>350</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Property</string>
     </property>
    </widget>
   </widget>
