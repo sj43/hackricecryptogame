@@ -2,7 +2,7 @@ import sys
 from PySide2.QtWidgets import QApplication, QPushButton
 from PySide2.QtCore import QObject, Signal, Slot
 
-from GameFunctions import *
+from hackricecryptogame.GameFunctions import *
 from windows.OptionWindows import *
 from classes.quest import *
 from Crypto.market import *
