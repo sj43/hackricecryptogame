@@ -1,7 +1,5 @@
-import csv
-from hackricecryptogame.Crypto.Parsing import finaldict
+from hackricecryptogame.Crypto.Parsing import *
 
-finaldict = finaldict()
 class Market:
     # The Market is made up of a date and a dictionary of Currency prices mapped to Currency names
     def __init__(self, date, collection):
@@ -22,15 +20,12 @@ class Market:
 
     def update(self, newdate):
         self.date = newdate
-        for cryp in finaldict():
+        for cryp in finaldict:
             if newdate in finaldict[cryp]:
                 self.collection[cryp] = finaldict[cryp][newdate]
             else:
                 self.collection[cryp] = -1
 
-    def original(self, newdate):
-        self.collection = {}
-        self.update(newdate)
 
 Current = Market("2015/10/1", {})
 Current.update("2015/11/1")
