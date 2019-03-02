@@ -6,3 +6,6 @@ class Quest:
     def generate_quest_randomly(self):
         quest_string, time_constraint = quests[random(1, 9)]
         self.end_month = self.start_month + time_constraint
+
+    def check_quest_success(self):
+        pass
