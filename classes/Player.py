@@ -2,6 +2,7 @@ import sys
 from PySide2.QtWidgets import QApplication, QPushButton
 from PySide2.QtCore import QObject, Signal, Slot
 
+
 class Property:
     """Class for large assets (real estate, vehicles, jewelery)"""
 
@@ -69,7 +70,7 @@ class PlayerAssets:
         self.property.append(cryptocurrency)
 
 
-class PlayerClass:
+class Player:
     """Class for game player finances"""
 
     def __init__(self, salary, livingExpenses, savings, card, credit, payments):
@@ -107,4 +108,4 @@ class PlayerClass:
         self.credit += changeAmount
 
     def change_debt(self, changeAmount):
-        self.debt += changeAmount
+        self.payments += changeAmount
