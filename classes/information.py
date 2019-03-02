@@ -1,9 +1,9 @@
 def get_property(choiceProperty):
-    return property_choices[choiceProperty + 1]
+    return property_choices[choiceProperty - 1]
 
 
 def get_investment(choiceInvestment):
-    return property_choices[choiceInvestment + 1]
+    return property_choices[choiceInvestment - 1]
 
 
 # Choices
