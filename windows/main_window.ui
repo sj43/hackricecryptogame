@@ -197,7 +197,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QPushButton" name="living_credit">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>10</x>
       <y>200</y>
       <width>261</width>
       <height>100</height>
@@ -210,7 +210,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QPushButton" name="living_savings">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>10</x>
       <y>300</y>
       <width>261</width>
       <height>100</height>
@@ -220,10 +220,10 @@ p, li { white-space: pre-wrap; }
      <string>Pay living expenses with cash</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="living_savings_2">
+   <widget class="QPushButton" name="card_notrepay">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>10</x>
       <y>500</y>
       <width>261</width>
       <height>100</height>
@@ -233,10 +233,10 @@ p, li { white-space: pre-wrap; }
      <string>Do not repay credit card</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="credit_repay">
+   <widget class="QPushButton" name="card_repay">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>10</x>
       <y>400</y>
       <width>261</width>
       <height>100</height>
@@ -244,6 +244,16 @@ p, li { white-space: pre-wrap; }
     </property>
     <property name="text">
      <string>Repay credit card</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="fee_payment">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>200</y>
+      <width>181</width>
+      <height>391</height>
+     </rect>
     </property>
    </widget>
   </widget>

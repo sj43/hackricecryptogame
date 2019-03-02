@@ -5,8 +5,9 @@ from PySide2.QtCore import QObject, Signal, Slot
 from classes.Player import *
 from classes.Community import *
 from classes.Information import *
-from Crypto.Parse import *
-from Crypto.Market import *
+##from Crypto.Parse import *
+##from Crypto.Market import *
+
 
 class GameFunctions:
     """Game functions"""
@@ -15,8 +16,7 @@ class GameFunctions:
     see_loan = Signal()
     see_property = Signal()
     see_investment = Signal()
-    pay_living_expenses = Signal(float)
-    pay_card = Signal(float)
+    show_payment = Signal(str)
 
     def __init__(self, startDate):
         self.date = startDate
@@ -25,7 +25,7 @@ class GameFunctions:
         self.economy = Economy(0.05, 5.0)
         self.bank = Bank()
 
-    @Slot
+    @Slot()
     def player_ask_loan(self):
         maxLoanAmount = self.bank.howMuchCanILoan(self.player.salary, self.player.credit)
         loanInterest = self.bank.getLoanInterest(self.player.credit)
@@ -41,7 +41,7 @@ class GameFunctions:
         self.player.savings += loanAmount
         self.player.payments -= (loanInterest/12.0)*loanAmount
 
-    @Slot
+    @Slot()
     def player_ask_property(self):
         self.see_property.emit()
 
@@ -52,7 +52,7 @@ class GameFunctions:
         self.player.assets.add_property(propertyInfo)
         self.player.savings -= propertyInfo[1]
 
-    @Slot
+    @Slot()
     def player_ask_investment(self):
         self.see_investment.emit()
 
@@ -73,9 +73,8 @@ class GameFunctions:
         for propertyAsset in self.player.assets.property:
             self.player.savings += propertyAsset.income()
 
-    @Slot
     def pay_living_expenses(self):
-        self.pay_living_expenses.emit(self.player.livingExpenses)
+        self.show_payment.emit(str("Living Expenses: ") + str(self.player.livingExpenses))
 
     @Slot(int)
     def choice_living_expenses(self, choicePayment):
@@ -105,13 +104,14 @@ class GameFunctions:
 
     def pay_loans(self):
         paymentLeft = self.player.payments
+        self.show_payment.emit(str("Living Expenses: ") + str(paymentLeft))
+
         self.player.savings -= paymentLeft
         if self.player.savings < 0:
             self.player.savings = self.sell_assets(-self.player.savings)
 
-    @Slot
     def pay_card(self):
-        self.pay_card.emit(5000 - self.player.card)
+        self.show_payment.emit(str("Living Expenses: ") + str(5000 - self.player.card))
 
     @Slot(int)
     def choice_card(self, choiceCard):
@@ -130,7 +130,7 @@ class GameFunctions:
         self.player.salary *= 1.0025
 
     def update_credit(self):
-        self.player.credit += self.bank.updateCreditScore(self.card)
+        self.player.credit += self.bank.updateCreditScore(self.player.card)
         if self.player.credit < 300:
             self.player.credit = 300
         if self.player.credit > 850:
