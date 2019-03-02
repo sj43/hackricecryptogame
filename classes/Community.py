@@ -1,4 +1,5 @@
 import sys
+import random
 from PySide2.QtWidgets import QApplication, QPushButton
 from PySide2.QtCore import QObject, Signal, Slot
 
@@ -73,6 +74,8 @@ class Bank:
 
 
 class Realestate:
+    """Class for realestate system"""
+
     def __init__(self, name, value, rent):
         self.name = name
         self.value = value
@@ -95,6 +98,8 @@ class Realestate:
 
 
 class Vehicle:
+    """Class for vehicle system"""
+
     def __init__(self, name, value, fee):
         self.name = name
         self.value = value
@@ -114,3 +119,40 @@ class Vehicle:
 
     def isPaidOff(self):
         return self.value == self.paid
+
+
+class Stock:
+    """
+    Class for stock system
+    Notice that "kind" is one of "low", "avg", or "high"
+    """
+
+    def __init__(self, initial_amount, kind): # kind = one of "low", "avg", or "high"
+        self.initial_amount = initial_amount
+        self.kind = kind
+
+    def generate_random_return_percentage(self, a, b):
+        return random.uniform(a, b)
+
+    def generate_return(self, whatkind):
+        if whatkind == "low":
+            return generate_random_return_percentage(-0.05, 0.05)
+        elif whatkind == "avg":
+            return generate_random_return_percentage(-0.15, 0.15)
+        elif whatkind == "high":
+            return generate_random_return_percentage(-0.3, 0.3)
+        else: # error
+            return -1
+
+    def return_result(self):
+        return self.initial_amount * (1 + generate_return(self.kind))
+
+
+class FixedSaving:
+    """Class for fixed saving system"""
+
+    def __init__(self, initial_amount, year, rate):
+        self.return_amount = initial_amount * (1 + rate/4.0/100) ^ (4 * year)
+
+    def return_result(self):
+        return self.return_amount
