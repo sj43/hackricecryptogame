@@ -24,8 +24,8 @@ class GameInstance(GameFunctions):
         InvestmentWindow.make_investment.connect(self.player_make_investment)
         BankWindow.get_loan.connect(self.player_get_loan)
 
-        self.see_loan.connect(BankWindow.open_window)
         self.max_loan_amount.connect(BankWindow.set_loan_amount)
+        self.see_loan.connect(BankWindow.open_window)
     
         self.see_property.connect(PropertyWindow.open_window)
         self.see_investment.connect(InvestmentWindow.open_window)
