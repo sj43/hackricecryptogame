@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5aa05849-8331-4ba2-a22c-262998a0f43e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/GameInstance.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameInstance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Economy.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,13 +14,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/GameInstance.py">
+        <entry file="file://$PROJECT_DIR$/classes/Community.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="234">
+              <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -44,6 +42,7 @@
         <option value="$PROJECT_DIR$/Game/a.py" />
         <option value="$PROJECT_DIR$/Game/GameInstance.py" />
         <option value="$PROJECT_DIR$/GameInstance.py" />
+        <option value="$PROJECT_DIR$/classes/Community.py" />
       </list>
     </option>
   </component>
@@ -100,12 +99,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1551507876093</updated>
-      <workItem from="1551507877363" duration="1088000" />
+      <workItem from="1551507877363" duration="1591000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1088000" />
+    <option name="totallyTimeSpent" value="1591000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="882" y="23" width="798" height="945" extended-state="0" />
@@ -173,10 +172,20 @@
     <entry file="file://$PROJECT_DIR$/GameInstance.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Economy.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Community.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
         </state>
       </provider>
     </entry>
