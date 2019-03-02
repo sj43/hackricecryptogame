@@ -1,5 +1,5 @@
 from classes.Player import *
-from classes.Economy import *
+from classes.Community import *
 
 class GameInstance:
     """Game instance """
