@@ -25,7 +25,7 @@ class GameFunctions:
         self.economy = Economy(0.05, 5.0)
         self.bank = Bank()
 
-    @Slot
+    @Slot()
     def player_ask_loan(self):
         maxLoanAmount = self.bank.howMuchCanILoan(self.player.salary, self.player.credit)
         loanInterest = self.bank.getLoanInterest(self.player.credit)
@@ -41,7 +41,7 @@ class GameFunctions:
         self.player.savings += loanAmount
         self.player.payments -= (loanInterest/12.0)*loanAmount
 
-    @Slot
+    @Slot()
     def player_ask_property(self):
         self.see_property.emit()
 
@@ -52,7 +52,7 @@ class GameFunctions:
         self.player.assets.add_property(propertyInfo)
         self.player.savings -= propertyInfo[1]
 
-    @Slot
+    @Slot()
     def player_ask_investment(self):
         self.see_investment.emit()
 

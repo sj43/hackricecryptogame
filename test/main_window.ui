@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1305</width>
+    <height>657</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="SettingButton">
+    <property name="geometry">
+     <rect>
+      <x>1110</x>
+      <y>10</y>
+      <width>181</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Setting</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>1030</x>
+      <y>190</y>
+      <width>256</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <row>
+     <property name="text">
+      <string>Net Value</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Salary</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Assets</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Credit</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Debt</string>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>$</string>
+     </property>
+    </column>
+    <item row="0" column="0">
+     <property name="text">
+      <string>0</string>
+     </property>
+    </item>
+    <item row="1" column="0">
+     <property name="text">
+      <string>0</string>
+     </property>
+    </item>
+    <item row="2" column="0">
+     <property name="text">
+      <string>0</string>
+     </property>
+    </item>
+    <item row="3" column="0">
+     <property name="text">
+      <string>0</string>
+     </property>
+    </item>
+    <item row="4" column="0">
+     <property name="text">
+      <string>0</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QTextBrowser" name="textBrowser">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>20</y>
+      <width>481</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Gulim'; font-size:48pt;&quot;&gt;WELCOME!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="textBrowser_2">
+    <property name="geometry">
+     <rect>
+      <x>1030</x>
+      <y>130</y>
+      <width>256</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Gulim'; font-size:18pt;&quot;&gt;User Info&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdNumber">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>50</y>
+      <width>211</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="value" stdset="0">
+     <double>20.000000000000000</double>
+    </property>
+    <property name="intValue" stdset="0">
+     <number>20</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="CryptoButton">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>150</y>
+      <width>350</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Cryptocurrency Market</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="InvestmentButton">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>260</y>
+      <width>351</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Investments</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BankButton">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>370</y>
+      <width>350</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Bank</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="PropertyButton">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>480</y>
+      <width>350</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Property</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="living_credit">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>200</y>
+      <width>261</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Pay living expenses with credit card</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="living_savings">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>300</y>
+      <width>261</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Pay living expenses with cash</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="card_notrepay">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>500</y>
+      <width>261</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Do not repay credit card</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="card_repay">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>400</y>
+      <width>261</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Repay credit card</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="fee_payment">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>200</y>
+      <width>181</width>
+      <height>391</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1305</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMainWindow">
+    <property name="title">
+     <string>Game Name</string>
+    </property>
+   </widget>
+   <addaction name="menuMainWindow"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

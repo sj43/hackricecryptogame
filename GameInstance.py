@@ -48,7 +48,7 @@ class GameInstance(GameFunctions):
     def get_date(self):
         return self.date
     
-    @Slot
+    @Slot()
     def end_turn(self):
         # update player info
     
@@ -82,5 +82,5 @@ class GameInstance(GameFunctions):
 
 
 app = QApplication(sys.argv)
-form = PropertyWindow('property_window.ui')
+GameInstance('2015/1')
 sys.exit(app.exec_())
