@@ -55,9 +55,6 @@ class PlayerAssets:
         self.investment = []
         self.cryptocurrency = []
 
-    def change_savings(self, changeAmount):
-        self.savings += changeAmount
-
     def add_property(self, property):
         self.property.append(property)
 
@@ -71,10 +68,11 @@ class PlayerAssets:
 class PlayerFinances:
     """Class for game player finances"""
 
-    def __init__(self, salary, livingExpenses, savings, credit, debt):
+    def __init__(self, salary, livingExpenses, savings, card, credit, debt):
         self.salary = salary
         self.livingExpenses = livingExpenses
         self.savings = savings
+        self.card = card
         self.credit = credit
         self.debt = debt
         self.assets = PlayerAssets()
@@ -91,4 +89,20 @@ class PlayerFinances:
             netWorth += cryptocurrency.currencyValue
 
         return netWorth
+
+    def change_salary(self, changeAmount):
+        self.salary += changeAmount
+
+    def change_livingExpenses(self, changeAmount):
+        self.livingExpenses += changeAmount
+
+    def change_savings(self, changeAmount):
+        self.savings += changeAmount
+
+    def change_credit(self, changeAmount):
+        self.credit += changeAmount
+
+    def change_debt(self, changeAmount):
+        self.debt += changeAmount
+
 
