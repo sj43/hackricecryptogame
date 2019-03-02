@@ -41,12 +41,13 @@ class GameInstance(GameFunctions):
             if random.randint(0, 100) < 20:
                 self.my_quest = Quest()
         else: # check for existing quests success
-            if self.my_quest.check_quest_overall_success(self.date, self.player):
-                pass #reward (scoring system)
-            self.my_quest = None
+            if self.date == self.my_quest.end_month:
+                if self.my_quest.check_quest_overall_success(self.date, self.player):
+                    pass #reward (scoring system)
+                else:
+                    self.my_quest = None
 
-
-
+                    
         self.pay_living_expenses()
         self.pay_loans()
         self.pay_card()
