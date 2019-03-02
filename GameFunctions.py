@@ -66,8 +66,8 @@ class GameFunctions:
     def get_income(self):
         self.player.savings += self.player.salary
 
-        for cryptoAsset in self.player.assets.cryptocurrency:
-            !!!self.player.savings += cryptoAsset.income()
+        ##for cryptoAsset in self.player.assets.cryptocurrency:
+        ##    self.player.savings += cryptoAsset.income()
         for investmentAsset in self.player.assets.investment:
             self.player.savings += investmentAsset.income()
         for propertyAsset in self.player.assets.property:
@@ -85,11 +85,11 @@ class GameFunctions:
             self.player.savings -= self.player.livingExpenses
 
     def sell_assets(self, paymentLeft):
-        for cryptoAsset in self.player.assets.cryptocurrency:
-            if paymentLeft <= 0:
-                break
-            !!!paymentLeft -= !!!cryptoAsset!!!
-            !!!self.player.assets.investment.remove(cryptoAsset)
+        ##for cryptoAsset in self.player.assets.cryptocurrency:
+        ##    if paymentLeft <= 0:
+        ##        break
+        ##    paymentLeft -= cryptoAsset
+        ##    self.player.assets.investment.remove(cryptoAsset)
         for investmentAsset in self.player.assets.investment:
             if paymentLeft <= 0:
                 break
