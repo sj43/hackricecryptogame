@@ -14,5 +14,3 @@ class Economy:
 
     def set_stockIndex(self, newAmount):
         self.stockIndex = changeAmount
-
-
