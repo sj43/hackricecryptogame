@@ -18,8 +18,6 @@ class Economy:
 
 class Bank:
     """Class for bank system"""
-    def __init__(self, name):
-        self.name = name
 
     def updateCreditScore(self, player):
         if player.creditcard < 1000:
