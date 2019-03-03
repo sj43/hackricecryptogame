@@ -9,16 +9,17 @@ from classes.Information import *
 ##from Crypto.Market import *
 
 
-class GameFunctions:
+class GameFunctions(QObject):
     """Game functions"""
 
-    max_loan_amount = Signal(float)
+    max_loan_amount = Signal(float, float)
     see_loan = Signal()
     see_property = Signal()
     see_investment = Signal()
-    show_payment = Signal(str)
+    show_payment = Signal(float)
 
-    def __init__(self, startDate):
+    def __init__(self, startDate, parent=None):
+        super(GameFunctions, self).__init__(parent)
         self.date = startDate
 
         self.player = Player(100000, 500, 100000, 5000, 700, 0)
@@ -74,7 +75,7 @@ class GameFunctions:
             self.player.savings += propertyAsset.income()
 
     def pay_living_expenses(self):
-        self.show_payment.emit(str("Living Expenses: ") + str(self.player.livingExpenses))
+        self.show_payment.emit(self.player.livingExpenses)
 
     @Slot(int)
     def choice_living_expenses(self, choicePayment):
@@ -104,14 +105,14 @@ class GameFunctions:
 
     def pay_loans(self):
         paymentLeft = self.player.payments
-        self.show_payment.emit(str("Living Expenses: ") + str(paymentLeft))
+        self.show_payment.emit(paymentLeft)
 
         self.player.savings -= paymentLeft
         if self.player.savings < 0:
             self.player.savings = self.sell_assets(-self.player.savings)
 
     def pay_card(self):
-        self.show_payment.emit(str("Living Expenses: ") + str(5000 - self.player.card))
+        self.show_payment.emit(5000 - self.player.card)
 
     @Slot(int)
     def choice_card(self, choiceCard):
