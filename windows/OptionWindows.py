@@ -159,10 +159,10 @@ class BankWindow(QObject):
     def close_window(self):
         self.window.hide()
 
-    def set_loan_amount(self, maxLoanAmount, loanInterest):
-        self.interest_list.clear()
-        self.interest_list.addItem(str("Max Loan Amount: ") + str(maxLoanAmount))
-        self.interest_list.addItem(str("Loan Interest: ") + str(loanInterest))
+    #def set_loan_amount(self, maxLoanAmount, loanInterest):
+    #    self.interest_list.clear()
+    #    self.interest_list.addItem(str("Max Loan Amount: ") + str(maxLoanAmount))
+    #    self.interest_list.addItem(str("Loan Interest: ") + str(loanInterest))
 
     def loan_100(self):
         self.get_loan.emit(1.0)
@@ -289,7 +289,7 @@ class GameInstance(GameFunctions):
         self.InvestmentWindow.make_investment.connect(self.player_make_investment)
         self.BankWindow.get_loan.connect(self.player_get_loan)
 
-        self.max_loan_amount.connect(self.BankWindow.set_loan_amount)
+        ##self.max_loan_amount.connect(self.BankWindow.set_loan_amount)
         #self.see_loan.connect(self.BankWindow.open_window)
 
         self.see_property.connect(self.PropertyWindow.open_window)
