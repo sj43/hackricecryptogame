@@ -187,6 +187,8 @@ class MainWindow(QObject):
     living_expenses = Signal(int)
     card_repay = Signal(int)
 
+    end_turn_signal = Signal()
+
     def __init__(self, ui_file, parent=None):
         super(MainWindow, self).__init__(parent)
 
@@ -194,18 +196,20 @@ class MainWindow(QObject):
         self.connect_signals()
         self.window.show()
 
+        self.fee_payment_list = self.window.findChild(QListWidget, 'fee_payment')
+
     def connect_signals(self):
         bank_button = self.window.findChild(QPushButton, 'BankButton')
         crypto_button = self.window.findChild(QPushButton, 'CryptoButton')
         property_button = self.window.findChild(QPushButton, 'PropertyButton')
         investment_button = self.window.findChild(QPushButton, 'InvestmentButton')
 
+        end_turn_button = self.window.findChild(QPushButton, 'end_turn')
+
         living_card_button = self.window.findChild(QPushButton, 'living_card')
         living_savings_button = self.window.findChild(QPushButton, 'living_savings')
         card_repay_button = self.window.findChild(QPushButton, 'card_repay')
         card_notrepay_button = self.window.findChild(QPushButton, 'card_notrepay')
-
-        fee_payment_list = self.window.findChild(QListWidget, 'fee_payment')
 
         bank_button.clicked.connect(self.open_bank_window)
         crypto_button.clicked.connect(self.open_crypto_window)
@@ -216,6 +220,8 @@ class MainWindow(QObject):
         living_savings_button.clicked.connect(self.living_expenses_savings)
         card_repay_button.clicked.connect(self.credit_card_repay)
         card_notrepay_button.clicked.connect(self.credit_card_notrepay)
+
+        end_turn_button.clicked.connect(self.end_turn)
 
     def open_window(self):
         self.window.show()
@@ -249,6 +255,9 @@ class MainWindow(QObject):
 
     def display_fee_payment(self, payment):
         self.fee_payment_list.addItem(payment)
+
+    def end_turn(self):
+        self.end_turn_signal.emit()
 
 
 ##MainWindow("main_window.ui")
@@ -290,6 +299,8 @@ class GameInstance(GameFunctions):
         self.MainWindow.card_repay.connect(self.choice_card)
         ##self.show_payment.connect(self.MainWindow.display_fee_payment())
 
+        self.MainWindow.end_turn_signal.connect(self.end_turn)
+
     def player_action(self):
         pass
 
@@ -303,6 +314,7 @@ class GameInstance(GameFunctions):
         self.get_income()
 
         # show quest here (1. only when there is no existing quest, 2. not always create a quest)
+        """
         if self.my_quest == None:
             if random.randint(0, 100) < 20:
                 self.my_quest = Quest(self.date)
@@ -312,6 +324,7 @@ class GameInstance(GameFunctions):
                     pass  # reward (scoring system)
                 else:
                     self.my_quest = None
+        """
 
         self.pay_living_expenses()
         self.pay_loans()
@@ -324,9 +337,28 @@ class GameInstance(GameFunctions):
 
         # update community info
         # update crypto info
-
         # update screen info
-        pass
+        self.update_screen()
+
+    def update_screen(self):
+        self.MainWindow.fee_payment_list.clear()
+        self.MainWindow.fee_payment_list.addItem("salary: ")
+        self.MainWindow.fee_payment_list.addItem(str(self.player.salary))
+        self.MainWindow.fee_payment_list.addItem("living expenses: ")
+        self.MainWindow.fee_payment_list.addItem(str(self.player.livingExpenses))
+        self.MainWindow.fee_payment_list.addItem("card: ")
+        self.MainWindow.fee_payment_list.addItem(str(self.player.card))
+        self.MainWindow.fee_payment_list.addItem("credit: ")
+        self.MainWindow.fee_payment_list.addItem(str(self.player.credit))
+        self.MainWindow.fee_payment_list.addItem("payments: ")
+        self.MainWindow.fee_payment_list.addItem(str(self.player.payments))
+        self.MainWindow.fee_payment_list.addItem("assets: ")
+        for investmentAsset in self.player.assets.investment:
+            self.MainWindow.fee_payment_list.addItem(str(investmentAsset.name))
+        for propertyAsset in self.player.assets.property:
+            self.MainWindow.fee_payment_list.addItem(str(propertyAsset.name))
+        self.MainWindow.fee_payment_list.addItem("net worth: ")
+        self.MainWindow.fee_payment_list.addItem(str(self.player.compute_net_worth()))
 
 
 GameInstance(1)
