@@ -14,13 +14,16 @@ class GameInstance(GameFunctions):
     def __init__(self, startDate):
         GameFunctions.__init__(self, startDate)
 
-        MainWindow('main_window.ui')
-        PropertyWindow('property_window.ui')
-        InvestmentWindow('property_window.ui')
-        BankWindow('bank_window.ui')
+        ##app = QApplication(sys.argv)
+        MainWindow("main_window.ui")
 
-        self.my_quest = None
-        self.connect_signals_and_slots()
+        ##PropertyWindow('property_window.ui')
+        ##InvestmentWindow('property_window.ui')
+        ##BankWindow('bank_window.ui')
+
+        ##self.my_quest = None
+        ##self.connect_signals_and_slots()
+        ##sys.exit(app.exec_())
 
     def connect_signals_and_slots(self):
         MainWindow.open_bank.connect(self.player_ask_loan)
@@ -81,6 +84,4 @@ class GameInstance(GameFunctions):
         pass
 
 
-app = QApplication(sys.argv)
-GameInstance('2015/1')
-sys.exit(app.exec_())
+GameInstance(1)

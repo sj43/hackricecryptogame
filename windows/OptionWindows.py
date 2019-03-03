@@ -11,12 +11,8 @@ class PropertyWindow(QObject):
 
     def __init__(self, ui_file, parent=None):
         super(PropertyWindow, self).__init__(parent)
-        ui_file = QFile(ui_file)
-        ui_file.open(QFile.ReadOnly)
-
-        loader = QUiLoader()
-        self.window = loader.load(ui_file)
-        ui_file.close()
+        app = QApplication(sys.argv)
+        self.window = QUiLoader().load(ui_file)
 
         back_button = self.window.findChild(QPushButton, 'back_button')
         estate_apartment_button = self.window.findChild(QPushButton, 'estate_apartment_button')
@@ -35,6 +31,7 @@ class PropertyWindow(QObject):
         vehicle_luxury_button.clicked.connect(self.buy_vehicle_luxury)
 
         self.window.hide()
+        sys.exit(app.exec_())
 
     def open_window(self):
         self.window.show()
@@ -73,12 +70,8 @@ class InvestmentWindow(QObject):
 
     def __init__(self, ui_file, parent=None):
         super(InvestmentWindow, self).__init__(parent)
-        ui_file = QFile(ui_file)
-        ui_file.open(QFile.ReadOnly)
-
-        loader = QUiLoader()
-        self.window = loader.load(ui_file)
-        ui_file.close()
+        app = QApplication(sys.argv)
+        self.window = QUiLoader().load(ui_file)
 
         back_button = self.window.findChild(QPushButton, 'back_button')
         stock_low_button = self.window.findChild(QPushButton, 'stock_low_button')
@@ -97,6 +90,7 @@ class InvestmentWindow(QObject):
         fixed_12_button.clicked.connect(self.buy_fixed_12())
 
         self.window.hide()
+        sys.exit(app.exec_())
 
     def open_window(self):
         self.window.show()
@@ -135,13 +129,14 @@ class BankWindow(QObject):
 
     def __init__(self, ui_file, parent=None):
         super(BankWindow, self).__init__(parent)
-        ui_file = QFile(ui_file)
-        ui_file.open(QFile.ReadOnly)
 
-        loader = QUiLoader()
-        self.window = loader.load(ui_file)
-        ui_file.close()
+        app = QApplication(sys.argv)
+        self.window = QUiLoader().load(ui_file)
+        self.connect_signals()
+        self.window.show()
+        sys.exit(app.exec_())
 
+    def connect_signals(self):
         interest_list = self.window.findChild(QListWidget, 'interest_list')
         back_button = self.window.findChild(QPushButton, 'back_button')
         loan_100_button = self.window.findChild(QPushButton, 'loan_100_button')
@@ -152,8 +147,6 @@ class BankWindow(QObject):
         loan_100_button.clicked.connect(self.loan_100)
         loan_30_button.clicked.connect(self.loan_30)
         loan_10_button.clicked.connect(self.loan_10)
-
-        self.window.hide()
 
     def open_window(self):
         self.window.show()
@@ -191,13 +184,14 @@ class MainWindow(QObject):
 
     def __init__(self, ui_file, parent=None):
         super(MainWindow, self).__init__(parent)
-        ui_file = QFile(ui_file)
-        ui_file.open(QFile.ReadOnly)
 
-        loader = QUiLoader()
-        self.window = loader.load(ui_file)
-        ui_file.close()
+        app = QApplication(sys.argv)
+        self.window = QUiLoader().load(ui_file)
+        self.connect_signals()
+        self.window.show()
+        sys.exit(app.exec_())
 
+    def connect_signals(self):
         bank_button = self.window.findChild(QPushButton, 'BankButton')
         crypto_button = self.window.findChild(QPushButton, 'CryptoButton')
         property_button = self.window.findChild(QPushButton, 'PropertyButton')
@@ -219,8 +213,6 @@ class MainWindow(QObject):
         living_savings_button.clicked.connect(self.living_expenses_savings)
         card_repay_button.clicked.connect(self.credit_card_repay)
         card_notrepay_button.clicked.connect(self.credit_card_notrepay)
-
-        self.window.show()
 
     def open_window(self):
         self.window.show()
@@ -253,5 +245,8 @@ class MainWindow(QObject):
         self.card_repay.emit(2)
 
     def display_fee_payment(self, payment):
-        self.interest_list.addItem(payment)
+        self.fee_payment_list.addItem(payment)
 
+
+MainWindow("main_window.ui")
+BankWindow("bank_window.ui")
