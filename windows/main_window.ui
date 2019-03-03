@@ -27,71 +27,6 @@
      <string>Setting</string>
     </property>
    </widget>
-   <widget class="QTableWidget" name="tableWidget">
-    <property name="geometry">
-     <rect>
-      <x>1030</x>
-      <y>190</y>
-      <width>256</width>
-      <height>391</height>
-     </rect>
-    </property>
-    <row>
-     <property name="text">
-      <string>Net Value</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>Salary</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>Assets</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>Credit</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>Debt</string>
-     </property>
-    </row>
-    <column>
-     <property name="text">
-      <string>$</string>
-     </property>
-    </column>
-    <item row="0" column="0">
-     <property name="text">
-      <string>0</string>
-     </property>
-    </item>
-    <item row="1" column="0">
-     <property name="text">
-      <string>0</string>
-     </property>
-    </item>
-    <item row="2" column="0">
-     <property name="text">
-      <string>0</string>
-     </property>
-    </item>
-    <item row="3" column="0">
-     <property name="text">
-      <string>0</string>
-     </property>
-    </item>
-    <item row="4" column="0">
-     <property name="text">
-      <string>0</string>
-     </property>
-    </item>
-   </widget>
    <widget class="QTextBrowser" name="textBrowser">
     <property name="geometry">
      <rect>
@@ -113,7 +48,7 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>1030</x>
-      <y>130</y>
+      <y>90</y>
       <width>256</width>
       <height>51</height>
      </rect>
@@ -123,7 +58,7 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Gulim'; font-size:18pt;&quot;&gt;User Info&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Gulim'; font-size:18pt;&quot;&gt;Personal Finances&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLCDNumber" name="lcdNumber">
@@ -249,9 +184,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QListWidget" name="fee_payment">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>200</y>
-      <width>181</width>
+      <x>1030</x>
+      <y>150</y>
+      <width>251</width>
       <height>391</height>
      </rect>
     </property>
@@ -259,7 +194,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QPushButton" name="end_turn">
     <property name="geometry">
      <rect>
-      <x>880</x>
+      <x>870</x>
       <y>460</y>
       <width>111</width>
       <height>121</height>
