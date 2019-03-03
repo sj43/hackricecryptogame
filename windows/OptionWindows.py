@@ -142,7 +142,7 @@ class BankWindow(QObject):
         self.window.hide()
 
     def connect_signals(self):
-        interest_list = self.window.findChild(QListWidget, 'interest_list')
+        ##interest_list = self.window.findChild(QListWidget, 'interest_list')
         back_button = self.window.findChild(QPushButton, 'back_button')
         loan_100_button = self.window.findChild(QPushButton, 'loan_100_button')
         loan_30_button = self.window.findChild(QPushButton, 'loan_30_button')
