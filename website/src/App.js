@@ -5,6 +5,7 @@ import './hamburgers.css';
 import LandingPage from './Pages/LandingPage.js';
 import DescriptionPage from './Pages/Description.js';
 import WhatItIs from './Pages/WhatItIs.js';
+import WhoWeAre from './Pages/WhoWeAre.js';
 // import ScrollIntoView from 'react-scroll-into-view';
 
 
@@ -65,6 +66,7 @@ class App extends Component {
         <LandingPage/>
         <DescriptionPage/>
         <WhatItIs/>
+        <WhoWeAre/>
 
       </div>
       

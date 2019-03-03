@@ -1,0 +1,41 @@
+.projectstitle{
+    display: flex;
+    flex-wrap:nowrap;
+    align-items: center;
+    justify-content: space-around;
+    color: #B1CBF6;
+    padding-left: 7vw;
+    padding-top: 12vh;
+    width: 75vw;
+    height: 20vh;
+  }
+  
+  .projectstitle h1{
+    font-size: calc(35px + 1.3vw + 1.3vh);
+  }
+  
+  .projectstitle hr{
+    background-color: #B1CBF6;
+    width: 37vw;
+    height: 0.5vh;
+    border: 0;
+  }
+  
+  .projectSection{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 7vw;
+    padding-right: 7vw;
+    padding-top: 10vh;
+    height: 50vh;
+  
+  }
+  
+  .projectSection .emptySpace{
+    height: 17vw;
+    width: 17vw;
+    background: #D8D8D8;
+  }
+  
