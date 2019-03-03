@@ -1,0 +1,82 @@
+.outside {
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: #002FA4 */
+  }
+  .aboutPageWrapper{
+    height:100vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 5vw 60vh, #FFB9CD,
+    #FFB9CD 35vw, transparent 35vw);
+  }
+  h1{
+    margin-top: 10vh;
+    margin-left: 20px;
+    display: flex;
+    align-self: flex-end;
+    width: 100vw;
+    font-size: 120px;
+    color: #40BFB4;
+    font-weight: 1200;
+    letter-spacing: 0.3vw;
+    /* font-family: 'HKGrotesk-Bold'; */
+    cursor: pointer;
+  }
+
+  .vert-line {
+    background-color: white !important;
+    z-index: 9999;
+    height: 20vh;
+    width: 0.5vh;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+    position: relative;
+  }
+
+  .big-p {
+    font-weight: 800;
+    font-size: 30px;
+    align-content: center;
+    text-align: center;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    /* color: #202020; */
+    color: #787878;
+
+  }
+  .big-p em {
+    font-style: normal;
+    color: #40BFB4;
+  }
+
+  #ins-p {
+    font-size: 9vh;
+    align-content: center;
+    text-align: center;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    color: black;
+  }
+
+  #learn-more {
+    font-size: 3.1vh;
+    align-content: center;
+    text-align: center;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    color: black;
+    margin-bottom: 5vh;
+  }
+  a {
+    color: black;
+  }
+
+  u {
+    border-bottom-width: 0.1vh;
+  }
