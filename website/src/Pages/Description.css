@@ -1,0 +1,27 @@
+.wrapper{
+    height: 30vh;
+    z-index: 1;
+    background: white;
+  }
+.wrapper h1{
+    color: white;
+    font-weight: bold;
+    font-size: calc(5px + 1.3vh + 1.7vw);
+  }
+  #background {
+    height: 30vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: gray;
+  
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    z-index: -99;
+  
+    background-size: 100%;
+  }

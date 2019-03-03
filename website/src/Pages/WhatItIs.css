@@ -1,0 +1,53 @@
+.outside {
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: #002FA4 */
+  }
+
+  .vert-line {
+    background-color: white !important;
+    z-index: 9999;
+    height: 20vh;
+    width: 0.5vh;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+    position: relative;
+  }
+
+  #big-p {
+    font-size: calc(8px + 2vw + 2vh);
+    align-content: center;
+    text-align: center;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    color: black;
+  }
+
+  #ins-p {
+    font-size: 9vh;
+    align-content: center;
+    text-align: center;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    color: black;
+  }
+
+  #learn-more {
+    font-size: 3.1vh;
+    align-content: center;
+    text-align: center;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    color: black;
+    margin-bottom: 5vh;
+  }
+  a {
+    color: black;
+  }
+
+  u {
+    border-bottom-width: 0.1vh;
+  }

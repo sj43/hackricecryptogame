@@ -1,0 +1,49 @@
+.content hr {
+    height: 0.5vh;
+    border: 0;
+    background-color: white;
+    margin: 1em 0;
+    padding: 0;
+    width: 20vw;
+}
+body{
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+}
+#cryptoGameText{
+    font-size: calc(50px + 6vw);
+    color: #ffffff;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    /*align-self: flex-end;*/
+}
+
+.content{
+    height:70vh;/*Makes the page fill the whole page and then some*/
+    background: #002FA4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    overflow-x: hidden;
+}
+
+#whiteText{
+    padding-top: 8vh;
+    margin-left: 3vw;
+    font-size: calc(16px + 3vw);
+    color: #ffffff;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /*align-self: flex-start;*/
+}
+#weDoThingsText{
+  padding-left: 2vw;
+  width: 90vw;
+}
+.light{
+    color: #729AFC !important;
+}
