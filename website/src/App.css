@@ -1,86 +1,33 @@
+.App {
+  text-align: center;
+}
 
-/* Start of menu CSS */
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
 
-.sidebarText{
-  /* display: block; */
-  padding-left: 6vw;
-  padding-right: 1vw;
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
   display: flex;
-  flex-direction: row;
-  color:#D2D2D2;
-  font-family: 'HKGrotesk-Bold';
-  cursor: pointer;
-}
-
-.sidebarText:hover {
-  color: #6E6E6E;
-}
-
-.sidebarTextHome {
-  padding-left: 15vw;
-  padding-right: 2vw;
-  display: flex;
-  flex-direction: row;
-  color:#D2D2D2;
-  font-family: 'HKGrotesk-Bold';
-  cursor: pointer;
-}
-
-.sidebarTextHome:hover {
-  color: #6E6E6E;
-}
-
-.sidebarTextContact {
-  padding-left: 5vw;
-  padding-right: 1vw;
-  display: flex;
-  flex-direction: row;
-  color:#D2D2D2;
-  font-family: 'HKGrotesk-Bold';
-  cursor: pointer;
-}
-
-.sidebarTextContact:hover {
-  color: #6E6E6E;
-}
-
-/* HERE'S HOW THE MENU WORKS: */
-/* The div is always there, and there's no transformation when the menu is open. */
-#menu.open {
-  transform: none;
-}
-#menu.closed{
-  visibility: hidden;
-
-}
-/* But when the menu is closed, the div is still /displayed/ */
-/* It's just that it's translated 10vh off of the screen (which is the height of the menu div) */
-#menu {
-  width: 100vw;
-  /* height: 20vh; */
-  height: 10vh;
-  background-color: white;
+  flex-direction: column;
   align-items: center;
-  flex-direction: row;
-  display: flex;
-  /* justify-content: space-between; */
-  font-size: 1.8vw;
-  transition: transform 0.2s ease-out;
-  transform: translateY(-10vh); /*This is what hides the menu when it's closed*/
-  position: fixed;
-  z-index: 99;
-  border-bottom: 1px solid #e6e6e6;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
-button{
-  outline:none;
-  position: fixed;
-  z-index: 100;
-}
-#hamburger {
-  z-index: 100;
-  margin-left: 2vw;
-  margin-top: 1.5vh;
+.App-link {
+  color: #61dafb;
 }
 
-/* End of menu CSS */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
