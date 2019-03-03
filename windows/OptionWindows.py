@@ -367,5 +367,5 @@ class GameInstance(GameFunctions):
         self.MainWindow.fee_payment_list.addItem(str(self.player.compute_net_worth()))
 
 
-GameInstance(1)
+
 
