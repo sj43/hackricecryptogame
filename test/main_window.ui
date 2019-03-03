@@ -194,7 +194,7 @@ p, li { white-space: pre-wrap; }
      <string>Property</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="living_credit">
+   <widget class="QPushButton" name="living_card">
     <property name="geometry">
      <rect>
       <x>10</x>
