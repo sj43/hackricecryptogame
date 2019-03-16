@@ -69,10 +69,10 @@ class GameFunctions(QObject):
 
         ##for cryptoAsset in self.player.assets.cryptocurrency:
         ##    self.player.savings += cryptoAsset.income()
-        for investmentAsset in self.player.assets.investment:
-            self.player.savings += investmentAsset.income()
-        for propertyAsset in self.player.assets.property:
-            self.player.savings += propertyAsset.income()
+        ##for investmentAsset in self.player.assets.investment:
+        ##    self.player.savings += investmentAsset.income()
+        ##for propertyAsset in self.player.assets.property:
+        ##    self.player.savings += propertyAsset.income()
 
     def pay_living_expenses(self):
         self.show_payment.emit(self.player.livingExpenses)

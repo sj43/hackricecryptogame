@@ -71,10 +71,10 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="value" stdset="0">
-     <double>20.000000000000000</double>
+     <double>2019.000000000000000</double>
     </property>
     <property name="intValue" stdset="0">
-     <number>20</number>
+     <number>2019</number>
     </property>
    </widget>
    <widget class="QPushButton" name="CryptoButton">
