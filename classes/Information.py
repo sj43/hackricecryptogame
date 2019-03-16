@@ -3,16 +3,16 @@ def get_property(choiceProperty):
 
 
 def get_investment(choiceInvestment):
-    return property_choices[choiceInvestment - 1]
+    return investment_choices[choiceInvestment - 1]
 
 
 # Choices
-property_choices = (("vehicle_economy", 20000),
-                    ("vehicle_middle", 50000),
-                    ("vehicle_luxury", 100000),
-                    ("estate_apartment", 150000),
+property_choices = (("estate_apartment", 150000),
                     ("estate_house", 300000),
-                    ("estate_penthouse", 600000))
+                    ("estate_penthouse", 600000),
+                    ("vehicle_economy", 20000),
+                    ("vehicle_middle", 50000),
+                    ("vehicle_luxury", 100000))
 investment_choices = (("stock_low", 1000),
                       ("stock_avg", 1000),
                       ("stock_high", 1000),

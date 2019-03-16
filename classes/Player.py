@@ -73,10 +73,10 @@ class PlayerAssets:
         self.property.append(Property(propertyInfo[0], propertyInfo[1]))
 
     def add_investment(self, investmentInfo):
-        self.property.append(Investment(investmentInfo[0], investmentInfo[1]))
+        self.investment.append(Investment(investmentInfo[0], investmentInfo[1]))
 
     def add_cryptocurrency(self, cryptoAsset):
-        self.property.append(cryptoAsset)
+        self.cryptocurrency.append(cryptoAsset)
 
 
 class Player:

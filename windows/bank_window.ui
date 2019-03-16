@@ -85,9 +85,9 @@ p, li { white-space: pre-wrap; }
   <widget class="QListWidget" name="interest_list">
    <property name="geometry">
     <rect>
-     <x>360</x>
+     <x>240</x>
      <y>440</y>
-     <width>221</width>
+     <width>461</width>
      <height>61</height>
     </rect>
    </property>

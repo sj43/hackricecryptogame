@@ -1,12 +1,13 @@
 import sys
-from PySide2.QtWidgets import QApplication, QPushButton
-from PySide2.QtCore import QObject, Signal, Slot
+
+from PySide2.QtWidgets import QApplication, QPushButton, QListWidget
+from PySide2.QtCore import QFile, QObject, Signal, Slot
 
 from classes.Player import *
 from classes.Community import *
 from classes.Information import *
-##from Crypto.Parse import *
-##from Crypto.Market import *
+# from Crypto.Parse import *
+# from Crypto.Market import *
 
 
 class GameFunctions(QObject):
@@ -22,25 +23,27 @@ class GameFunctions(QObject):
         super(GameFunctions, self).__init__(parent)
         self.date = startDate
 
-        self.player = Player(100000, 500, 100000, 5000, 700, 0)
+        # salary, livingExpenses, savings, card, credit, payments
+        self.player = Player(100000.0/12.0, 500, 100000, 5000, 700, 0)
+        # interestRate, growthGDP
         self.economy = Economy(0.05, 5.0)
         self.bank = Bank()
 
-    @Slot()
-    def player_ask_loan(self):
-        maxLoanAmount = self.bank.howMuchCanILoan(self.player.salary, self.player.credit)
-        loanInterest = self.bank.getLoanInterest(self.player.credit)
+    @Slot(int)
+    def player_buy_crypto(self, choiceCrypto):
+        # cryptoInfo = get_crypto(choiceCrypto)
 
-        self.max_loan_amount.emit(maxLoanAmount, loanInterest)
-        self.see_loan.emit()
+        # self.player.assets.add_cryptocurrency(cryptoInfo)
+        # self.player.savings -= cryptoInfo[1]
+        print("buy")
 
-    @Slot(float)
-    def player_get_loan(self, choicePercent):
-        loanAmount = choicePercent * self.bank.howMuchCanILoan(self.player.salary, self.player.credit)
-        loanInterest = self.bank.getLoanInterest(self.player.credit)
+    @Slot(int)
+    def player_sell_crypto(self, choiceCrypto):
+        # cryptoInfo = get_crypto(choiceCrypto)
 
-        self.player.savings += loanAmount
-        self.player.payments -= (loanInterest/12.0)*loanAmount
+        # self.player.assets.add_cryptocurrency(cryptoInfo)
+        # self.player.savings -= cryptoInfo[1]
+        print("sell")
 
     @Slot()
     def player_ask_property(self):
@@ -63,6 +66,22 @@ class GameFunctions(QObject):
 
         self.player.assets.add_investment(investmentInfo)
         self.player.savings -= investmentInfo[1]
+
+    @Slot()
+    def player_ask_loan(self):
+        maxLoanAmount = self.bank.howMuchCanILoan(self.player.salary, self.player.credit)
+        loanInterest = self.bank.getLoanInterest(self.player.credit)
+
+        self.max_loan_amount.emit(maxLoanAmount, loanInterest)
+        self.see_loan.emit()
+
+    @Slot(float)
+    def player_get_loan(self, choicePercent):
+        loanAmount = choicePercent * self.bank.howMuchCanILoan(self.player.salary, self.player.credit)
+        loanInterest = self.bank.getLoanInterest(self.player.credit)
+
+        self.player.savings += loanAmount
+        self.player.payments -= (loanInterest/12.0)*loanAmount
 
     def get_income(self):
         self.player.savings += self.player.salary
